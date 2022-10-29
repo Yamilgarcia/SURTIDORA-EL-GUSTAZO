@@ -12,7 +12,7 @@ import java.util.*;
 public class DataBase {
     
     //Cadena de conexión de la BD
-    private final String URL = "jdbc:sqlserver://localhost:1433;databaseName=    ;"
+    private final String URL = "jdbc:sqlserver://localhost:1433;databaseName=BD_ELGUSTAZO;"
             + "integratedSecurity = true;" + " encrypt= true;trustServerCertificate= true;";
 
     private Connection conexion;//para la conexion con la BD
