@@ -34,12 +34,12 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         SegunNombre2 = new javax.swing.JLabel();
         PrimNombre = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextRuc = new javax.swing.JTextField();
-        jTextRuc1 = new javax.swing.JTextField();
-        jTextRuc2 = new javax.swing.JTextField();
-        jTextRuc3 = new javax.swing.JTextField();
-        jTextRuc4 = new javax.swing.JTextField();
-        jTextRuc5 = new javax.swing.JTextField();
+        jTextnumb2 = new javax.swing.JTextField();
+        jTextnomb1 = new javax.swing.JTextField();
+        jTextapell1 = new javax.swing.JTextField();
+        jTextnumcelu = new javax.swing.JTextField();
+        jTextapell2 = new javax.swing.JTextField();
+        jTextdirec = new javax.swing.JTextField();
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -83,23 +83,23 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jLabel2.setText("Registro Empleado");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
-        jTextRuc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 210, -1));
+        jTextnumb2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jPanel1.add(jTextnumb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 210, -1));
 
-        jTextRuc1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextRuc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, -1));
+        jTextnomb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, -1));
 
-        jTextRuc2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextRuc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 210, -1));
+        jTextapell1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 210, -1));
 
-        jTextRuc3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextRuc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 210, -1));
+        jTextnumcelu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 210, -1));
 
-        jTextRuc4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextRuc4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 210, -1));
+        jTextapell2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jPanel1.add(jTextapell2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 210, -1));
 
-        jTextRuc5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextRuc5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 210, -1));
+        jTextdirec.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 210, -1));
 
         jButtonGuardar.setBackground(new java.awt.Color(0, 51, 102));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -150,12 +150,12 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextRuc;
-    private javax.swing.JTextField jTextRuc1;
-    private javax.swing.JTextField jTextRuc2;
-    private javax.swing.JTextField jTextRuc3;
-    private javax.swing.JTextField jTextRuc4;
-    private javax.swing.JTextField jTextRuc5;
+    private javax.swing.JTextField jTextapell1;
+    private javax.swing.JTextField jTextapell2;
+    private javax.swing.JTextField jTextdirec;
+    private javax.swing.JTextField jTextnomb1;
+    private javax.swing.JTextField jTextnumb2;
+    private javax.swing.JTextField jTextnumcelu;
     private javax.swing.JLabel lavelapellido;
     private javax.swing.JLabel lavelapellido1;
     // End of variables declaration//GEN-END:variables
