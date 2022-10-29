@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vista;
+import Modelo.*;
+import java.util.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,6 +19,26 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
      */
     public Registroproveedor() {
         initComponents();
+        jTextRuc.setEnabled(false);
+    }
+    
+    
+    public void obtenerDatos(){
+        List<Proveedores> proveedores=new DAOProveedores().ObtenerDatos();
+        
+        DefaultTableModel modelo=new DefaultTableModel();
+        
+        String[] columnas={"RUC","Nombre","Telefono","Direccion"
+        };
+        
+        modelo.setColumnIdentifiers(columnas);
+        for (Proveedores prov:proveedores){
+            
+            String [] renglon={(prov.getRuc()),prov.getNomb(),
+            prov.getDirec(), prov.getNumcelu()};
+            modelo.addRow(renglon);
+        }
+        jTableproveedores.setModel(modelo);
     }
 
     /**
@@ -30,16 +54,15 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextNomb = new javax.swing.JTextField();
         jTextnumcelu = new javax.swing.JTextField();
-        jTextApell = new javax.swing.JTextField();
         jTextdirec = new javax.swing.JTextField();
         jTextRuc = new javax.swing.JTextField();
         jButtonGuardar = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableproveedores = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,32 +82,24 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jLabel11.setText("Nombre:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Apellido:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
-
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Telefono:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Direccion:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
         jTextNomb.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextNomb, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 210, -1));
 
         jTextnumcelu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 210, -1));
-
-        jTextApell.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextApell, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 210, -1));
+        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 210, -1));
 
         jTextdirec.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 210, -1));
+        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 210, -1));
 
         jTextRuc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 210, -1));
@@ -98,13 +113,22 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 110, 40));
 
-        jButtonCancelar.setBackground(new java.awt.Color(0, 51, 102));
-        jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCancelar.setText("Cancelar");
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 110, 40));
+        jTableproveedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableproveedores);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 840, 150));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/textura-madera-en-negro_2560x1600_xtrafondos.com.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
@@ -124,12 +148,29 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
+       
+       String ruC=jTextRuc.getText();
+       String nombrE=jTextNomb.getText();
+       String numcelU=jTextnumcelu.getText();
+       String direC=jTextdirec.getText();
+       if (ruC.contentEquals("")||nombrE.contentEquals("")||
+               numcelU.contentEquals("")||
+               direC.contentEquals("")){
+           JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios");
+       }else {
+           try{
+               Proveedores pv=new DAOProveedores().Insertar(nombrE, numcelU, direC);
+           }catch (Exception e) {
+               e.printStackTrace();
+               JOptionPane.showMessageDialog(rootPane, "No se agrego al registro");
+           }
+       }   
+       obtenerDatos();
+
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -137,12 +178,14 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextApell;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableproveedores;
     private javax.swing.JTextField jTextNomb;
     private javax.swing.JTextField jTextRuc;
     private javax.swing.JTextField jTextdirec;
     private javax.swing.JTextField jTextnumcelu;
     // End of variables declaration//GEN-END:variables
+
+    
 }

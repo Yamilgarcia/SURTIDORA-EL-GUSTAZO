@@ -3,18 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
  */
 package Controlador;
-
+import Vista.*;
 /**
  *
  * @author Cris
  */
 public class MenuOpciones extends javax.swing.JFrame {
-
+             private Registroproveedor Proveedores;
     /**
      * Creates new form MenuOpciones
      */
     public MenuOpciones() {
         initComponents();
+        Proveedores=new Registroproveedor();
+        
+        desktopPane.add(Proveedores);
     }
 
     /**
@@ -32,7 +35,7 @@ public class MenuOpciones extends javax.swing.JFrame {
         openMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
+        proveedorMenuItem = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
         deleteMenuItem = new javax.swing.JMenuItem();
 
@@ -58,10 +61,15 @@ public class MenuOpciones extends javax.swing.JFrame {
         cutMenuItem.setText("Productos");
         editMenu.add(cutMenuItem);
 
-        copyMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Proveedores");
-        editMenu.add(copyMenuItem);
+        proveedorMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        proveedorMenuItem.setMnemonic('y');
+        proveedorMenuItem.setText("Proveedores");
+        proveedorMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                proveedorMenuItemActionPerformed(evt);
+            }
+        });
+        editMenu.add(proveedorMenuItem);
 
         pasteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pasteMenuItem.setMnemonic('p');
@@ -90,6 +98,11 @@ public class MenuOpciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void proveedorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proveedorMenuItemActionPerformed
+        Proveedores.obtenerDatos();
+        Proveedores.setVisible(true);
+    }//GEN-LAST:event_proveedorMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,7 +140,6 @@ public class MenuOpciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktopPane;
@@ -136,6 +148,7 @@ public class MenuOpciones extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
+    private javax.swing.JMenuItem proveedorMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }
