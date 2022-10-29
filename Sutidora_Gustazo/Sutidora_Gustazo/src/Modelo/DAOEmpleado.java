@@ -34,7 +34,7 @@ public class DAOEmpleado {
     //Metodo para actualizar un registro de la BD
     public int Actualizar(int ID_empleado, String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc){
         
-        String transaccion = "UPDATE Empleados SET nomb1='"
+        String transaccion = "UPDATE EMPLEADOS SET nomb1='"
                 +nomb1+ "',nomb2='"
                 +nomb2+"',apell1='"
                 +apell1+"',apell2='"
