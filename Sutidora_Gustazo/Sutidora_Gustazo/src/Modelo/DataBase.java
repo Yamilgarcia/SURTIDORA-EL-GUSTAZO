@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class DataBase {
     
-    //Cadena de conexion de la BD
+    //Cadena de conexión de la BD
     private final String URL = "jdbc:sqlserver://localhost:1433;databaseName=    ;"
             + "integratedSecurity = true;" + " encrypt= true;trustServerCertificate= true;";
 
