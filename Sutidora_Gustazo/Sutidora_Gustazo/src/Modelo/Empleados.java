@@ -36,6 +36,10 @@ public class Empleados {
         this.direc = direc;
     }
 
+    Empleados(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public int getID_empleado() {
         return ID_empleado;
     }
