@@ -5,14 +5,14 @@
 package Modelo;
 import java.sql.*;
 import java.util.*;
-
 /**
  *
  * @author PC
  */
 public class DataBase {
+    
     //Cadena de conexion de la BD
-    private final String URL = "jdbc:sqlserver://localhost:1433;databaseName=BD_ELGUSTAZO;"
+    private final String URL = "jdbc:sqlserver://localhost:1433;databaseName=    ;"
             + "integratedSecurity = true;" + " encrypt= true;trustServerCertificate= true;";
 
     private Connection conexion;//para la conexion con la BD
@@ -97,8 +97,6 @@ public class DataBase {
             e.printStackTrace();
         }
     }
-
-    
     
     
 }

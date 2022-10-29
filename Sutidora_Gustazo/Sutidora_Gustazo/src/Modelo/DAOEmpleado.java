@@ -40,6 +40,7 @@ public class DAOEmpleado {
                 +apell1+"',apell2='"
                 +apell2+"',numcelu='"
                 +numcelu+"',direc='"
+                +direc+"' WHERE ID_empleado="
                 +ID_empleado;
         
         return new DataBase().Actualizar(transaccion);
