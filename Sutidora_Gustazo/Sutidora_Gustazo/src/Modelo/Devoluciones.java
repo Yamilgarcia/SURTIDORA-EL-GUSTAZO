@@ -13,11 +13,13 @@ public class Devoluciones {
     private int ID_devolu;
     private String descrip;
     private Date fecha;
+    private int ID_producto;
 
-    public Devoluciones(int ID_devolu, String descrip, Date fecha) {
+    public Devoluciones(int ID_devolu, String descrip, Date fecha, int ID_producto) {
         this.ID_devolu = ID_devolu;
         this.descrip = descrip;
         this.fecha = fecha;
+        this.ID_producto = ID_producto;
     }
 
     public Devoluciones(String descrip, Date fecha) {
@@ -48,5 +50,15 @@ public class Devoluciones {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public int getID_producto() {
+        return ID_producto;
+    }
+
+    public void setID_producto(int ID_producto) {
+        this.ID_producto = ID_producto;
+    }
+
+    
     
 }

@@ -32,7 +32,7 @@ public class DAOProveedores {
     //Metodo para actualizar un registro de la BD
     public int Actualizar(String ruc, String nomb, String numcelu, String direc){
         
-        String transaccion = "UPDATE Proveedores SET nomb='"
+        String transaccion = "UPDATE PROVEEDORES SET nomb='"
                 +nomb+ "',numcelu='"
                 +numcelu+"',direc='"
                 +direc+"' WHERE ID_empleado="
@@ -47,8 +47,8 @@ public class DAOProveedores {
         //Llama al metodo listar de la DataBase.java
         
         List<Map> registros = new  DataBase().Listar(transaccion);
-        List<Proveedores> proveedores = new ArrayList();//Arreglo de productos
-        //ciclo que recorre cada registro y los agrega al arreglo producto
+        List<Proveedores> proveedores = new ArrayList();//Arreglo de proveedores
+        //ciclo que recorre cada registro y los agrega al arreglo proveedores
         for (Map registro : registros){
             
             Proveedores prov = new Proveedores ((String)registro.get("ruc"),
@@ -67,7 +67,7 @@ public class DAOProveedores {
     //Metodo para eliminar un registro de la tabla en la BD
     public int Eliminar(String ruc){
         
-        String transaccion = "DELETE FROM PRODUCTOS WHERE ruc='"+ruc+"'";
+        String transaccion = "DELETE FROM PROVEEDORES WHERE ruc='"+ruc+"'";
         
         return new DataBase().Actualizar(transaccion);
         

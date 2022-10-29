@@ -13,7 +13,7 @@ public class DAOProductos {
     //Metodo para insertar datos a la base de datos
     
     public Productos Insertar(String nomb, String preciovent, String preciocom, String canti, Date fechavenci, String descrip ){
-        String transaccion = "INSERT INTO Productos VALUES('"
+        String transaccion = "INSERT INTO PRODUCTOS VALUES('"
                 +nomb+"', '"
                 +preciovent+"', '"
                 +preciocom+"', '"
@@ -32,13 +32,13 @@ public class DAOProductos {
     //Metodo para actualizar un registro de la BD
     public int Actualizar(int ID_producto, String nomb, String preciovent, String preciocom, String canti, Date fechavenci, String descrip){
         
-        String transaccion = "UPDATE Productos SET nomb='"
+        String transaccion = "UPDATE PRODUCTOS SET nomb='"
                 +nomb+ "',preciovent='"
                 +preciovent+"',preciocom='"
                 +preciocom+"',canti='"
                 +canti+"',fechavenci='"
                 +fechavenci+"',descrip='"
-                +descrip+"' WHERE ID_empleado="
+                +descrip+"' WHERE ID_productos="
                 +ID_producto;
         
         return new DataBase().Actualizar(transaccion);
