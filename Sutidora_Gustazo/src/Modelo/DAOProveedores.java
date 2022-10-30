@@ -14,7 +14,7 @@ public class DAOProveedores {
     //Metodo para insertar datos a la base de datos
     
     public Proveedores Insertar(String nomb, String numcelu, String direc ){
-        String transaccion = "INSERT INTO PROVEEDORES VALUES('"
+        String transaccion = "INSERT INTO Proveedores VALUES('"
                 +nomb+"', '"
                 +numcelu+"', '"
                 +direc+"') '";

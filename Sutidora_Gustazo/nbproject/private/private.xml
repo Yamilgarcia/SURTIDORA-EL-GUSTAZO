@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Downloads/Sutidora_Gustazo/Sutidora_Gustazo/src/Modelo/DAOVentas.java</file>
-            <file>file:/C:/Users/Usuario/Downloads/Sutidora_Gustazo/Sutidora_Gustazo/src/Modelo/DAODevoluciones.java</file>
-            <file>file:/C:/Users/Usuario/Downloads/Sutidora_Gustazo/Sutidora_Gustazo/src/Modelo/DAOProductos.java</file>
-            <file>file:/C:/Users/Usuario/Downloads/Sutidora_Gustazo/Sutidora_Gustazo/src/Modelo/DAOProveedores.java</file>
-            <file>file:/C:/Users/Usuario/Downloads/Sutidora_Gustazo/Sutidora_Gustazo/src/Modelo/DAOEmpleado.java</file>
+            <file>file:/C:/Users/Cris/Downloads/SURTIDORA-EL-GUSTAZO-main/Sutidora_Gustazo/src/Vista/Registroproveedor.java</file>
+            <file>file:/C:/Users/Cris/Downloads/SURTIDORA-EL-GUSTAZO-main/Sutidora_Gustazo/src/Modelo/DAODevoluciones.java</file>
+            <file>file:/C:/Users/Cris/Downloads/SURTIDORA-EL-GUSTAZO-main/Sutidora_Gustazo/src/Vista/Registrodevoluciones.java</file>
+            <file>file:/C:/Users/Cris/Downloads/SURTIDORA-EL-GUSTAZO-main/Sutidora_Gustazo/src/Modelo/Devoluciones.java</file>
         </group>
     </open-files>
 </project-private>
