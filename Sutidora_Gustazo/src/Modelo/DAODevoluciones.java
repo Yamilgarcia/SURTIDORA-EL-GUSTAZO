@@ -35,7 +35,7 @@ public class DAODevoluciones {
         String transaccion = "UPDATE DEVOLUCIONES SET descrip='"
                 +descrip+ "',fecha='"
                 +fecha+"',canti='"
-                +canti+"'where id='"
+                +canti+"'where ID_devolu="
                 +ID_devolu;
                 
                 
@@ -56,7 +56,9 @@ public class DAODevoluciones {
             
             Devoluciones devo = new Devoluciones ((int)registro.get("ID_devoluciones"),
                     (String) registro.get("descrip"),
-                    (java.sql.Date) registro.get("fecha"));
+                    (Date) registro.get("fecha"),
+                    (int)registro.get("canti"));
+            
                     
                     
                     devoluciones.add(devo);

@@ -210,7 +210,7 @@ public void obtenerDatos(){
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-            String cantI=jSpinnercanti.getName();
+            String cantI=jSpinnercanti.getValue().toString();
        String fechA=jTextfecha.getText();
        String productO=jTextproducto.getText();
        String proveedoR=jTextproveedor.getText();
@@ -221,7 +221,8 @@ public void obtenerDatos(){
            JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios");
        }else {
            try{
-               Devoluciones devo=new DAODevoluciones().Insertar(descriP, fecha, WIDTH);
+               Date fecH = Date.valueOf(fechA);
+               Devoluciones devo=new DAODevoluciones().Insertar(descriP, fecH, WIDTH);
            }catch (Exception e) {
                e.printStackTrace();
                JOptionPane.showMessageDialog(rootPane, "No se agrego al registro");
