@@ -212,11 +212,8 @@ public void obtenerDatos(){
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
             String cantI=jSpinnercanti.getValue().toString();
        String fechA=jTextfecha.getText();
-       String productO=jTextproducto.getText();
-       String proveedoR=jTextproveedor.getText();
        String descriP=jTextAreadescrip.getText();
        if (cantI.contentEquals("")||fechA.contentEquals("")||
-               productO.contentEquals("")||proveedoR.contentEquals("")||
                descriP.contentEquals("")){
            JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios");
        }else {
