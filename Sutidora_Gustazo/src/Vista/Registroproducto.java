@@ -263,7 +263,7 @@ public class Registroproducto extends javax.swing.JInternalFrame {
                 //convierte de string a Date
                 Date fech=Date.valueOf(fechaven);// usar formato de fecha: yyyy-mm-dd
                 //objeto para acceder al metodo insertar de DAOProducto
-                Productos pr = new DAOProductos().Insertar(nomb, precioven, Precomp, cant, fech, areaDescr);
+                Productos pr = new DAOProductos().Insertar(nomb, precioven, precioven, cant, fech, Precomp);
                 JOptionPane.showMessageDialog(rootPane, "Registro agregado");
                 
                 

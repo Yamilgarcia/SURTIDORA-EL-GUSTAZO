@@ -13,29 +13,28 @@ public class DAODevoluciones {
     
     //Metodo para insertar datos a la base de datos
     
-    public Devoluciones Insertar(String descrip, Date fecha, int canti ){
+    public Devoluciones Insertar(String descrip, Date fecha ){
         String transaccion = "INSERT INTO DEVOLUCIONES VALUES('"
                 +descrip+"', '"
-                +fecha+"') '"
-                +canti+"') '";
+                +fecha+"') '";
                 
                 
         
         //Llama al metodo actualizar ubicado en la Database.java
         if (new DataBase(). Actualizar(transaccion)>0){
-            return new Devoluciones (descrip, fecha, canti);
+            return new Devoluciones (descrip, fecha);
         }
         return null;
         
         
     }
     //Metodo para actualizar un registro de la BD
-    public int Actualizar(int ID_devolu, String descrip, Date fecha, int canti){
+    public int Actualizar(int ID_devolu, String descrip, Date fecha, int ID_producto){
         
         String transaccion = "UPDATE DEVOLUCIONES SET descrip='"
                 +descrip+ "',fecha='"
-                +fecha+"',canti='"
-                +canti+"'where ID_devolu="
+                +fecha+"',ID_producto='"
+                +ID_producto+"' WHERE ID_devolu="
                 +ID_devolu;
                 
                 
@@ -56,10 +55,8 @@ public class DAODevoluciones {
             
             Devoluciones devo = new Devoluciones ((int)registro.get("ID_devoluciones"),
                     (String) registro.get("descrip"),
-                    (Date) registro.get("fecha"),
-                    (int)registro.get("canti"));
-            
-                    
+                    (java.sql.Date) registro.get("fecha"),
+                    (int) registro.get("ID_producto"));
                     
                     devoluciones.add(devo);
             

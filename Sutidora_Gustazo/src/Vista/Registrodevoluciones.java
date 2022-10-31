@@ -3,12 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vista;
-import Modelo.*;
-import java.util.*;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import java.sql.Date;
-
 
 /**
  *
@@ -21,26 +15,8 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
      */
     public Registrodevoluciones() {
         initComponents();
-       
     }
-public void obtenerDatos(){
-        List<Devoluciones> devoluciones=new DAODevoluciones().ObtenerDatos();
-        
-        DefaultTableModel modelo=new DefaultTableModel();
-        
-        String[] columnas={"ID","Producto","Proveedor","Fecha", "Descripcion"
-        };
-        
-        modelo.setColumnIdentifiers(columnas);
-        for (Devoluciones devo:devoluciones){
-            
-            String [] renglon={Integer.toString(devo.getID_devolu()),
-            devo.getDescrip(),devo.getFecha().toString()};
-            
-                modelo.addRow(renglon);
-        }
-        jTabledevolucion.setModel(modelo);
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,13 +37,12 @@ public void obtenerDatos(){
         jTextproveedor = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTabledevolucion = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -130,7 +105,18 @@ public void obtenerDatos(){
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 100, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 100, 40));
+
+        jButtonCancelar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 110, 40));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,21 +142,6 @@ public void obtenerDatos(){
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Descripcion:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, 20));
-
-        jTabledevolucion.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTabledevolucion);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 840, 150));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/textura-madera-en-negro_2560x1600_xtrafondos.com.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
@@ -210,6 +181,9 @@ public void obtenerDatos(){
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+<<<<<<< HEAD
+        // TODO add your handling code here:
+=======
             String cantI=jSpinnercanti.getValue().toString();
        String fechA=jTextfecha.getText();
        String descriP=jTextAreadescrip.getText();
@@ -226,12 +200,18 @@ public void obtenerDatos(){
            }
        }   
        obtenerDatos();
+>>>>>>> 9a2cf2e4ec53145ecb7e1c9a3cfc8e34cfafd732
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -241,10 +221,8 @@ public void obtenerDatos(){
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinnercanti;
-    private javax.swing.JTable jTabledevolucion;
     private javax.swing.JTextArea jTextAreadescrip;
     private javax.swing.JTextField jTextfecha;
     private javax.swing.JTextField jTextproducto;
