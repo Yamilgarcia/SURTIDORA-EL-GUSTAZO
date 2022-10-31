@@ -10,18 +10,24 @@ import Vista.*;
  */
 public class MenuOpciones extends javax.swing.JFrame {
     
-    private  Registroproducto pr;//objeto formulario productos
-    
+    private  Registroproducto producto;//objeto formulario productos
+    private Registrodevoluciones devolucion;
 
     
     public MenuOpciones() {
         initComponents();
         
         setTitle("Menu Opciones Surtidora EL Gustazo ");//Agrego el titulo al MDI
-        pr= new Registroproducto();
+        producto= new Registroproducto();
         
         //Agrego los Jinternarframe al desktopPane del MDI
-        desktopPane.add(pr);
+        desktopPane.add(producto);
+        
+         
+        devolucion= new Registrodevoluciones();
+        
+        //Agrego los Jinternarframe al desktopPane del MDI
+        desktopPane.add(devolucion);
     }
 
     
@@ -79,6 +85,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         pasteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pasteMenuItem.setMnemonic('p');
         pasteMenuItem.setText("Devolucion");
+        pasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pasteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(pasteMenuItem);
 
         deleteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -106,15 +117,22 @@ public class MenuOpciones extends javax.swing.JFrame {
 
     private void VerProductosMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerProductosMenuItemMouseClicked
         //Llamo al metodo obtener datos para mostrarlos en la tabla del formulario
-        pr.ObtenerDatos();
-        pr.setVisible(true);
+  
         
         
     }//GEN-LAST:event_VerProductosMenuItemMouseClicked
 
     private void VerProductosMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerProductosMenuItemActionPerformed
+        producto.ObtenerDatos();
+        producto.setVisible(true);
         
+       
     }//GEN-LAST:event_VerProductosMenuItemActionPerformed
+
+    private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
+       devolucion.obtenerDatos();
+        devolucion.setVisible(true);
+    }//GEN-LAST:event_pasteMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
