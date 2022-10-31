@@ -181,7 +181,26 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
+=======
+            String cantI=jSpinnercanti.getValue().toString();
+       String fechA=jTextfecha.getText();
+       String descriP=jTextAreadescrip.getText();
+       if (cantI.contentEquals("")||fechA.contentEquals("")||
+               descriP.contentEquals("")){
+           JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios");
+       }else {
+           try{
+               Date fecH = Date.valueOf(fechA);
+               Devoluciones devo=new DAODevoluciones().Insertar(descriP, fecH, WIDTH);
+           }catch (Exception e) {
+               e.printStackTrace();
+               JOptionPane.showMessageDialog(rootPane, "No se agrego al registro");
+           }
+       }   
+       obtenerDatos();
+>>>>>>> 9a2cf2e4ec53145ecb7e1c9a3cfc8e34cfafd732
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
