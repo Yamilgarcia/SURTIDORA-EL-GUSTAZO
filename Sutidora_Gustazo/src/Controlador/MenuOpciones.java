@@ -12,6 +12,7 @@ public class MenuOpciones extends javax.swing.JFrame {
     
     private  Registroproducto producto;//objeto formulario productos
     private Registrodevoluciones devolucion;
+    private Registroproveedor proveedor;
 
     
     public MenuOpciones() {
@@ -28,6 +29,12 @@ public class MenuOpciones extends javax.swing.JFrame {
         
         //Agrego los Jinternarframe al desktopPane del MDI
         desktopPane.add(devolucion);
+        
+        
+        proveedor= new Registroproveedor();
+        
+        //Agrego los Jinternarframe al desktopPane del MDI
+        desktopPane.add(proveedor);
     }
 
     
@@ -80,6 +87,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         copyMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Proveedores");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(copyMenuItem);
 
         pasteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -133,6 +145,11 @@ public class MenuOpciones extends javax.swing.JFrame {
        devolucion.obtenerDatos();
         devolucion.setVisible(true);
     }//GEN-LAST:event_pasteMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        proveedor.obtenerDatos();
+        proveedor.setVisible(true);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

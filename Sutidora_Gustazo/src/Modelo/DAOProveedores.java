@@ -13,11 +13,12 @@ public class DAOProveedores {
     
     //Metodo para insertar datos a la base de datos
     
-    public Proveedores Insertar(String nomb, String numcelu, String direc ){
+    public Proveedores Insertar(String ruc,String nomb, String numcelu, String direc ){
         String transaccion = "INSERT INTO PROVEEDORES VALUES('"
+                +ruc+"', '"
                 +nomb+"', '"
                 +numcelu+"', '"
-                +direc+"') '";
+                +direc+"')";
                 
                 
         
@@ -35,7 +36,7 @@ public class DAOProveedores {
         String transaccion = "UPDATE PROVEEDORES SET nomb='"
                 +nomb+ "',numcelu='"
                 +numcelu+"',direc='"
-                +direc+"' WHERE ID_empleado="
+                +direc+"' WHERE ruc="
                 +ruc;
         
         return new DataBase().Actualizar(transaccion);
@@ -43,7 +44,7 @@ public class DAOProveedores {
     //Metodo para seleccionar todos los registros de la tabla
     public List ObtenerDatos(){
         
-        String transaccion ="SELECT *FROM PROVEEDORES";
+        String transaccion ="SELECT * FROM PROVEEDORES";
         //Llama al metodo listar de la DataBase.java
         
         List<Map> registros = new  DataBase().Listar(transaccion);
@@ -72,5 +73,13 @@ public class DAOProveedores {
         return new DataBase().Actualizar(transaccion);
         
     }
+
+//    public Proveedores Insertar(String nombrE, String ruC) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    public Proveedores Insertar(String nombrE, String ruC, String numcelU, String direC) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
     
 }

@@ -52,7 +52,7 @@ public class DataBase {
                 Map<String, Object> renglon = new HashMap();
                 for(int i=1; i<=numColumnas; i++){
                     //Se obtiene el nombre de campo en la BD
-                    String nombreCampo=rs.getMetaData().getColumnClassName(i);
+                    String nombreCampo=rs.getMetaData().getColumnName(i);
                     Object valor=rs.getObject(nombreCampo);
                     //por cada campo, se obtiene el numero y el valor del mismo
                     renglon.put(nombreCampo, valor);

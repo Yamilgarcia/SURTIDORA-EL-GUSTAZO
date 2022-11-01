@@ -58,6 +58,10 @@ public class Proveedores {
     public void setDirec(String direc) {
         this.direc = direc;
     }
+
+    public int getRUC_Proveedores() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

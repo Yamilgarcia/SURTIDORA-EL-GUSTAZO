@@ -19,7 +19,7 @@ public class DAOProductos {
                 +preciocom+"', '"
                 +canti+"', '"
                 +fechavenci+"', '"
-                +descrip+"') '";
+                +descrip+"') ";
         
         //Llama al metodo actualizar ubicado en la Database.java
         if (new DataBase(). Actualizar(transaccion)>0){

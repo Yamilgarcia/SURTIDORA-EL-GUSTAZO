@@ -19,27 +19,44 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
      */
     public Registroproveedor() {
         initComponents();
-        jTextRuc.setEnabled(false);
+       
     }
-    
+    public void limpiarCampos(){
+        
+        jTextRuc.setText("");
+        jTextNomb.setText("");
+        jTextdirec.setText("");
+        jTextnumcelu.setText("");
+
+
+
+    }
     
     public void obtenerDatos(){
-        List<Proveedores> proveedores=new DAOProveedores().ObtenerDatos();
         
-        DefaultTableModel modelo=new DefaultTableModel();
+        List<Proveedores> proved = new DAOProveedores().ObtenerDatos();
         
-        String[] columnas={"RUC","Nombre","Telefono","Direccion"
-        };
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        
+        String[] columnas={"RUC","Nombre","Dirección","Teléfono"};
+        
         
         modelo.setColumnIdentifiers(columnas);
-        for (Proveedores prov:proveedores){
+        for (Proveedores provedo : proved){
             
-            String [] renglon={(prov.getRuc()),prov.getNomb(),
-            prov.getDirec(), prov.getNumcelu()};
+            
+            
+            String[]renglon = {provedo.getRuc(),provedo.getNomb(),provedo.getDirec(),provedo.getNumcelu()};
             modelo.addRow(renglon);
-        }
+            
+        } 
+        
         jTableproveedores.setModel(modelo);
+                
     }
+    
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,23 +166,27 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
        
-       String ruC=jTextRuc.getText();
-       String nombrE=jTextNomb.getText();
-       String numcelU=jTextnumcelu.getText();
-       String direC=jTextdirec.getText();
-       if (ruC.contentEquals("")||nombrE.contentEquals("")||
-               numcelU.contentEquals("")||
-               direC.contentEquals("")){
-           JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorios");
-       }else {
-           try{
-               Proveedores pv=new DAOProveedores().Insertar(nombrE, numcelU, direC);
-           }catch (Exception e) {
-               e.printStackTrace();
-               JOptionPane.showMessageDialog(rootPane, "No se agrego al registro");
-           }
-       }   
-       obtenerDatos();
+      String ruc = jTextRuc.getText();
+      String nombr = jTextNomb.getText();
+      String direcci = jTextdirec.getText();
+      String numcelur = jTextnumcelu.getText();
+      
+      if(ruc.contentEquals("")||nombr.contentEquals("")||direcci.contentEquals("")||numcelur.contentEquals("")){
+         JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
+      } else {
+          
+          try{
+              Proveedores pro = new DAOProveedores().Insertar(ruc,nombr, numcelur, direcci);
+              JOptionPane.showMessageDialog(rootPane, "Registro Agregado");
+          }catch (Exception e){
+              e.printStackTrace();
+              JOptionPane.showMessageDialog(rootPane, "No se agrego el registro");
+          }
+          
+      }
+      
+      obtenerDatos();
+      limpiarCampos();
 
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
