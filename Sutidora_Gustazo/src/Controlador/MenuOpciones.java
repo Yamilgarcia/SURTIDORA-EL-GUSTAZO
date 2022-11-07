@@ -13,6 +13,7 @@ public class MenuOpciones extends javax.swing.JFrame {
     private  Registroproducto producto;//objeto formulario productos
     private Registrodevoluciones devolucion;
     private Registroproveedor proveedor;
+    private Registroempleado empleado;
 
     
     public MenuOpciones() {
@@ -35,6 +36,10 @@ public class MenuOpciones extends javax.swing.JFrame {
         
         //Agrego los Jinternarframe al desktopPane del MDI
         desktopPane.add(proveedor);
+        
+        empleado= new Registroempleado();
+        
+        desktopPane.add(empleado);
     }
 
     
@@ -107,6 +112,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         deleteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         deleteMenuItem.setMnemonic('d');
         deleteMenuItem.setText("Empleados");
+        deleteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(deleteMenuItem);
 
         menuBar.add(editMenu);
@@ -150,6 +160,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         proveedor.obtenerDatos();
         proveedor.setVisible(true);
     }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void deleteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMenuItemActionPerformed
+      empleado.obtenerDatos();
+      empleado.setVisible(true);
+    }//GEN-LAST:event_deleteMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

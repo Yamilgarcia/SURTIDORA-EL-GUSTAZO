@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vista;
+
 import Modelo.*;
 import java.util.*;
 import javax.swing.JOptionPane;
@@ -19,44 +20,37 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
      */
     public Registroproveedor() {
         initComponents();
-       
+
     }
-    public void limpiarCampos(){
-        
+
+    public void limpiarCampos() {
+
         jTextRuc.setText("");
         jTextNomb.setText("");
         jTextdirec.setText("");
         jTextnumcelu.setText("");
 
-
-
     }
-    
-    public void obtenerDatos(){
-        
+
+    public void obtenerDatos() {
+
         List<Proveedores> proved = new DAOProveedores().ObtenerDatos();
-        
+
         DefaultTableModel modelo = new DefaultTableModel();
-        
-        
-        String[] columnas={"RUC","Nombre","Dirección","Teléfono"};
-        
-        
+
+        String[] columnas = {"RUC", "Nombre", "Dirección", "Teléfono"};
+
         modelo.setColumnIdentifiers(columnas);
-        for (Proveedores provedo : proved){
-            
-            
-            
-            String[]renglon = {provedo.getRuc(),provedo.getNomb(),provedo.getDirec(),provedo.getNumcelu()};
+        for (Proveedores provedo : proved) {
+
+            String[] renglon = {provedo.getRuc(), provedo.getNomb(), provedo.getDirec(), provedo.getNumcelu()};
             modelo.addRow(renglon);
-            
-        } 
-        
+
+        }
+
         jTableproveedores.setModel(modelo);
-                
+
     }
-    
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -165,28 +159,28 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-       
-      String ruc = jTextRuc.getText();
-      String nombr = jTextNomb.getText();
-      String direcci = jTextdirec.getText();
-      String numcelur = jTextnumcelu.getText();
-      
-      if(ruc.contentEquals("")||nombr.contentEquals("")||direcci.contentEquals("")||numcelur.contentEquals("")){
-         JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
-      } else {
-          
-          try{
-              Proveedores pro = new DAOProveedores().Insertar(ruc,nombr, numcelur, direcci);
-              JOptionPane.showMessageDialog(rootPane, "Registro Agregado");
-          }catch (Exception e){
-              e.printStackTrace();
-              JOptionPane.showMessageDialog(rootPane, "No se agrego el registro");
-          }
-          
-      }
-      
-      obtenerDatos();
-      limpiarCampos();
+
+        String ruc = jTextRuc.getText();
+        String nombr = jTextNomb.getText();
+        String direcci = jTextdirec.getText();
+        String numcelur = jTextnumcelu.getText();
+
+        if (ruc.contentEquals("") || nombr.contentEquals("") || direcci.contentEquals("") || numcelur.contentEquals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
+        } else {
+
+            try {
+                Proveedores pro = new DAOProveedores().Insertar(ruc, nombr, numcelur, direcci);
+                JOptionPane.showMessageDialog(rootPane, "Registro Agregado");
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(rootPane, "No se agrego el registro");
+            }
+
+        }
+
+        obtenerDatos();
+        limpiarCampos();
 
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
@@ -208,5 +202,4 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextnumcelu;
     // End of variables declaration//GEN-END:variables
 
-    
 }

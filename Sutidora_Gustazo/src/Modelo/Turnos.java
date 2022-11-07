@@ -10,19 +10,19 @@ import java.sql.Date;
  */
 public class Turnos {
     
-    private int ID_turno;
-    private char nomb;
+     private int ID_turno;
+    private String nomb;
     private Date hrainicio;
     private Date hrafinali;
 
-    public Turnos(int ID_turno, char nomb, Date hrainicio, Date hrafinali) {
+    public Turnos(int ID_turno, String nomb, Date hrainicio, Date hrafinali) {
         this.ID_turno = ID_turno;
         this.nomb = nomb;
         this.hrainicio = hrainicio;
         this.hrafinali = hrafinali;
     }
 
-    public Turnos(char nomb, Date hrainicio, Date hrafinali) {
+    public Turnos(String nomb, Date hrainicio, Date hrafinali) {
         this.nomb = nomb;
         this.hrainicio = hrainicio;
         this.hrafinali = hrafinali;
@@ -36,11 +36,11 @@ public class Turnos {
         this.ID_turno = ID_turno;
     }
 
-    public char getNomb() {
+    public String getNomb() {
         return nomb;
     }
 
-    public void setNomb(char nomb) {
+    public void setNomb(String nomb) {
         this.nomb = nomb;
     }
 

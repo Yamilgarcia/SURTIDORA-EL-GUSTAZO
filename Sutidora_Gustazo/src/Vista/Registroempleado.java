@@ -4,9 +4,12 @@
  */
 package Vista;
 import Modelo.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.sql.Date;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -20,24 +23,62 @@ public class Registroempleado extends javax.swing.JInternalFrame {
      */
     public Registroempleado() {
         initComponents();
+         jTextIDempleado.setEnabled(false);
+         
+
+        llenarturno();
+        
     }
     
-    public void obtenerDatos(){
+      private void llenarturno(){
+    
+    DAOEmpleado modTurno = new DAOEmpleado();
+    ArrayList<Turnos> listarturno = (ArrayList<Turnos>) modTurno.ObtenerDatosTurnos();
+    
+    jComboBoxturno.removeAllItems();
+    
+    for (int i = 0; i < listarturno.size(); i++) {
+          
+           jComboBoxturno.addItem(listarturno.get(i).getNomb());
+    
+       }
+    
+    
+    
+    
+}
+    
+     public void limpiarCampos(){
+        
+      jTextnomb1.setText("");
+      jTextnomb2.setText("");
+      jTextapell1.setText("");
+      jTextapell2.setText("");
+      jTextdirec.setText("");
+      jTextnumcelu.setText("");
+
+        
+        
+      }
+    
+     public void obtenerDatos(){
         
         List<Empleados> empleado=new DAOEmpleado().ObtenerDatos();
         
         DefaultTableModel modelo=new DefaultTableModel();
         
-        String[] columnas={"ID","Nombre","Apellido","Direccion","Telefono"};
+       String[] columnas={"ID","Nomb1","Nomb2","Apell1","Apell2","Direc","Numcelu","ID Turno"};
         
         modelo.setColumnIdentifiers(columnas);
         for (Empleados  prov:empleado){
             
-            String [] renglon={Integer.toString(prov.getID_empleado()),
-                prov.getDirec(), prov.getNumcelu()};
-                modelo.addRow(renglon);
-            
-        }
+             String[]renglon = {Integer.toString(prov.getID_empleado()),prov.getNomb1(),prov.getNomb2(),prov.getApell1(),prov.getApell2(),prov.getDirec(),prov.getNumcelu(),
+                 Integer.toString(prov.getID_turnos())};
+                 modelo.addRow(renglon);
+
+             }
+                 
+             
         jTable1empleado.setModel(modelo);
     }
 
@@ -68,6 +109,10 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jButtonCancelar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1empleado = new javax.swing.JTable();
+        jTextidturno = new javax.swing.JTextField();
+        jComboBoxturno = new javax.swing.JComboBox<>();
+        jTextIDempleado = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,7 +158,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 210, -1));
 
         jTextnomb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, -1));
+        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 30));
 
         jTextapell1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 210, -1));
@@ -136,7 +181,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 110, 40));
 
         jButtonCancelar.setBackground(new java.awt.Color(0, 51, 102));
         jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -158,6 +203,16 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1empleado);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 840, 110));
+        jPanel1.add(jTextidturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 210, 30));
+
+        jComboBoxturno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(jComboBoxturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 210, 30));
+        jPanel1.add(jTextIDempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 140, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Turno:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/textura-madera-en-negro_2560x1600_xtrafondos.com.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
@@ -178,21 +233,23 @@ public class Registroempleado extends javax.swing.JInternalFrame {
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         
-        String nomb1 = jTextnomb1.getText();
+     String nomb1 = jTextnomb1.getText();
         String nomb2= jTextnomb2.getText();
         String  apell1=jTextapell1.getText();
         String  apell2=jTextapell2.getText();
         String  direc= jTextdirec.getText();
         String  num= jTextnumcelu.getText();
+        String id_turno= jTextidturno.getText();
         
        
         if(nomb1.contentEquals("")||nomb2.contentEquals("")||
-                direc.contentEquals("")||num.contentEquals("")){
+                direc.contentEquals("")||num.contentEquals("")||
+                apell1.contentEquals("")||apell2.contentEquals("")){
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
         }else{
             try{
-               
-                Empleados em=new DAOEmpleado().Insertar(nomb1, nomb2, apell1, apell2, num, direc);
+               int id_turn = Integer.parseInt(id_turno);
+                Empleados em =new DAOEmpleado().Insertar(nomb1, nomb2, apell1, apell2, num, direc, id_turn);
                 JOptionPane.showMessageDialog(rootPane, "Registro agregado");
                 
               }catch (Exception e){
@@ -203,7 +260,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
 
         
         obtenerDatos();
-
+        limpiarCampos();  
         
         
     }//GEN-LAST:event_jButtonGuardarActionPerformed
@@ -216,14 +273,18 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel SegunNombre2;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JComboBox<String> jComboBoxturno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1empleado;
+    private javax.swing.JTextField jTextIDempleado;
     private javax.swing.JTextField jTextapell1;
     private javax.swing.JTextField jTextapell2;
     private javax.swing.JTextField jTextdirec;
+    private javax.swing.JTextField jTextidturno;
     private javax.swing.JTextField jTextnomb1;
     private javax.swing.JTextField jTextnomb2;
     private javax.swing.JTextField jTextnumcelu;

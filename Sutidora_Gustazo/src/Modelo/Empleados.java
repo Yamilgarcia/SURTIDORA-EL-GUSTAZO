@@ -16,8 +16,9 @@ public class Empleados {
     private String apell2;
     private String numcelu;
     private String direc;
+    private int ID_turnos;
 
-    public Empleados(int ID_empleado, String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
+    public Empleados(int ID_empleado, String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc, int ID_turnos) {
         this.ID_empleado = ID_empleado;
         this.nomb1 = nomb1;
         this.nomb2 = nomb2;
@@ -25,15 +26,17 @@ public class Empleados {
         this.apell2 = apell2;
         this.numcelu = numcelu;
         this.direc = direc;
+        this.ID_turnos = ID_turnos;
     }
 
-    public Empleados(String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
+    public Empleados(String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc, int ID_turnos) {
         this.nomb1 = nomb1;
         this.nomb2 = nomb2;
         this.apell1 = apell1;
         this.apell2 = apell2;
         this.numcelu = numcelu;
         this.direc = direc;
+        this.ID_turnos = ID_turnos;
     }
 
     public int getID_empleado() {
@@ -91,6 +94,15 @@ public class Empleados {
     public void setDirec(String direc) {
         this.direc = direc;
     }
+
+    public int getID_turnos() {
+        return ID_turnos;
+    }
+
+    public void setID_turnos(int ID_turno) {
+        this.ID_turnos = ID_turno;
+    }
+    
     
     
 }

@@ -74,12 +74,6 @@ public class DAOProveedores {
         
     }
 
-//    public Proveedores Insertar(String nombrE, String ruC) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    public Proveedores Insertar(String nombrE, String ruC, String numcelU, String direC) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
+    
     
 }

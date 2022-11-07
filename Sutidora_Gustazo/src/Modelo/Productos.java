@@ -12,13 +12,14 @@ import java.sql.Date;
 public class Productos {
 private int ID_producto;
 private String nomb;
-private String preciovent;
-private String preciocom;
-private String canti;
+private float preciovent;
+private float preciocom;
+private float canti;
 private Date fechavenci;
 private String descrip;
+private int ID_categoria;
 
-    public Productos(int ID_producto, String nomb, String preciovent, String preciocom, String canti, Date fechavenci, String descrip) {
+    public Productos(int ID_producto, String nomb, float preciovent, float preciocom, float canti, Date fechavenci, String descrip, int ID_categoria) {
         this.ID_producto = ID_producto;
         this.nomb = nomb;
         this.preciovent = preciovent;
@@ -26,16 +27,17 @@ private String descrip;
         this.canti = canti;
         this.fechavenci = fechavenci;
         this.descrip = descrip;
-        
+        this.ID_categoria = ID_categoria;
     }
 
-    public Productos(String nomb, String preciovent, String preciocom, String canti, Date fechavenci, String descrip) {
+    public Productos(String nomb, float preciovent, float preciocom, float canti, Date fechavenci, String descrip, int ID_categoria) {
         this.nomb = nomb;
         this.preciovent = preciovent;
         this.preciocom = preciocom;
         this.canti = canti;
         this.fechavenci = fechavenci;
         this.descrip = descrip;
+        this.ID_categoria = ID_categoria;
     }
 
     public int getID_producto() {
@@ -54,27 +56,27 @@ private String descrip;
         this.nomb = nomb;
     }
 
-    public String getPreciovent() {
+    public float getPreciovent() {
         return preciovent;
     }
 
-    public void setPreciovent(String preciovent) {
+    public void setPreciovent(float preciovent) {
         this.preciovent = preciovent;
     }
 
-    public String getPreciocom() {
+    public float getPreciocom() {
         return preciocom;
     }
 
-    public void setPreciocom(String preciocom) {
+    public void setPreciocom(float preciocom) {
         this.preciocom = preciocom;
     }
 
-    public String getCanti() {
+    public float getCanti() {
         return canti;
     }
 
-    public void setCanti(String canti) {
+    public void setCanti(float canti) {
         this.canti = canti;
     }
 
@@ -93,5 +95,27 @@ private String descrip;
     public void setDescrip(String descrip) {
         this.descrip = descrip;
     }
+
+    public int getID_categoria() {
+        return ID_categoria;
+    }
+
+    public void setID_categoria(int ID_categoria) {
+        this.ID_categoria = ID_categoria;
+    }
+
+
+
+
+   
+
+
+
+
     
+
+    
+
+
+   
 }
