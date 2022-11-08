@@ -12,21 +12,23 @@ import java.sql.Date;
 public class Devoluciones {
     private int ID_devolu;
     private String descrip;
+    private float canti;
     private Date fecha;
-    private int canti;
-   
+    private int ID_producto;
 
-    public Devoluciones(int ID_devolu, String descrip, Date fecha, int canti) {
+    public Devoluciones(int ID_devolu, String descrip, float canti, Date fecha, int ID_producto) {
         this.ID_devolu = ID_devolu;
         this.descrip = descrip;
+        this.canti = canti;
         this.fecha = fecha;
-        this.canti=canti;
+        this.ID_producto = ID_producto;
     }
 
-    public Devoluciones(String descrip, Date fecha,int canti) {
+    public Devoluciones(String descrip, float canti, Date fecha, int ID_producto) {
         this.descrip = descrip;
+        this.canti = canti;
         this.fecha = fecha;
-        this.canti=canti;
+        this.ID_producto = ID_producto;
     }
 
     public int getID_devolu() {
@@ -45,6 +47,14 @@ public class Devoluciones {
         this.descrip = descrip;
     }
 
+    public float getCanti() {
+        return canti;
+    }
+
+    public void setCanti(float canti) {
+        this.canti = canti;
+    }
+
     public Date getFecha() {
         return fecha;
     }
@@ -52,14 +62,19 @@ public class Devoluciones {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public int getID_producto() {
+        return ID_producto;
+    }
+
+    public void setID_producto(int ID_producto) {
+        this.ID_producto = ID_producto;
+    }
+       
+   
     
-    public void getCanti(int canti){
-        this.canti=canti;
-    }
-     
-    public void setCanti(int canti){
-        this.canti=canti;
-    }
+   
+
     
     
 }

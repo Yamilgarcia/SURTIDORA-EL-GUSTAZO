@@ -12,25 +12,25 @@ import java.util.*;
 public class DAODevoluciones {
     
     //Metodo para insertar datos a la base de datos
-    
-    public Devoluciones Insertar(String descrip, Date fecha, int canti ){
+     public Devoluciones Insertar(String descrip, float canti,java.sql.Date fecha, int ID_producto){
         String transaccion = "INSERT INTO DEVOLUCIONES VALUES('"
                 +descrip+"', '"
-                +fecha+"') '"
-                +canti+"') '";
+                +canti+"', '"
+                +fecha+"', '"
+                +ID_producto+"')";
                 
                 
         
         //Llama al metodo actualizar ubicado en la Database.java
         if (new DataBase(). Actualizar(transaccion)>0){
-            return new Devoluciones (descrip, fecha, canti);
+            return new Devoluciones (descrip, canti,fecha,ID_producto);
         }
         return null;
         
         
     }
     //Metodo para actualizar un registro de la BD
-    public int Actualizar(int ID_devolu, String descrip, Date fecha, int canti){
+    public int Actualizar(int ID_devolu, String descrip, Date fecha, float canti){
         
         String transaccion = "UPDATE DEVOLUCIONES SET descrip='"
                 +descrip+ "',fecha='"
@@ -46,7 +46,7 @@ public class DAODevoluciones {
     //Metodo para seleccionar todos los registros de la tabla
     public List ObtenerDatos(){
         
-        String transaccion ="SELECT *FROM DEVOLUCIONES";
+        String transaccion ="SELECT * FROM DEVOLUCIONES";
         //Llama al metodo listar de la DataBase.java
         
         List<Map> registros = new  DataBase().Listar(transaccion);
@@ -54,16 +54,18 @@ public class DAODevoluciones {
         //ciclo que recorre cada registro y los agrega al arreglo empleados
         for (Map registro : registros){
             
-            Devoluciones devo = new Devoluciones ((int)registro.get("ID_devoluciones"),
+            Devoluciones devol = new Devoluciones ((int)registro.get("ID_devolu"),
                     (String) registro.get("descrip"),
-                    (Date) registro.get("fecha"),
-                    (int)registro.get("canti"));
+                    (Float.parseFloat(registro.get("canti").toString())),
+                    (java.sql.Date) registro.get("fecha"),
+                    (int)registro.get("ID_producto"));
             
                     
                     
-                    devoluciones.add(devo);
+                    devoluciones.add(devol);
             
         }
+        
         
         return devoluciones;//retorna todos los empelados ubicados  en la tabla de la BD
     }
