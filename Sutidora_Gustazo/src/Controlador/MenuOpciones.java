@@ -48,6 +48,9 @@ public class MenuOpciones extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -59,6 +62,16 @@ public class MenuOpciones extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, 10));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
+
+        desktopPane.add(jPanel1);
+        jPanel1.setBounds(0, 0, 850, 470);
+
+        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/ventas.png"))); // NOI18N
         fileMenu.setMnemonic('f');
         fileMenu.setText("Venta");
         fileMenu.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -70,6 +83,7 @@ public class MenuOpciones extends javax.swing.JFrame {
 
         menuBar.add(fileMenu);
 
+        editMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/thefreeforty_register_icon-icons.com_66338 (1).png"))); // NOI18N
         editMenu.setMnemonic('e');
         editMenu.setText("Registro");
         editMenu.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -131,7 +145,7 @@ public class MenuOpciones extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
         );
 
         pack();
@@ -208,6 +222,9 @@ public class MenuOpciones extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
