@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-import java.sql.Date;
+import java.sql.*;
 /**
  *
  * @author PC
@@ -12,17 +12,17 @@ public class Turnos {
     
      private int ID_turno;
     private String nomb;
-    private Date hrainicio;
-    private Date hrafinali;
+    private Time hrainicio;
+    private Time hrafinali;
 
-    public Turnos(int ID_turno, String nomb, Date hrainicio, Date hrafinali) {
+    public Turnos(int ID_turno, String nomb, Time hrainicio, Time hrafinali) {
         this.ID_turno = ID_turno;
         this.nomb = nomb;
         this.hrainicio = hrainicio;
         this.hrafinali = hrafinali;
     }
 
-    public Turnos(String nomb, Date hrainicio, Date hrafinali) {
+    public Turnos(String nomb, Time hrainicio, Time hrafinali) {
         this.nomb = nomb;
         this.hrainicio = hrainicio;
         this.hrafinali = hrafinali;
@@ -44,20 +44,21 @@ public class Turnos {
         this.nomb = nomb;
     }
 
-    public Date getHrainicio() {
+    public Time getHrainicio() {
         return hrainicio;
     }
 
-    public void setHrainicio(Date hrainicio) {
+    public void setHrainicio(Time hrainicio) {
         this.hrainicio = hrainicio;
     }
 
-    public Date getHrafinali() {
+    public Time getHrafinali() {
         return hrafinali;
     }
 
-    public void setHrafinali(Date hrafinali) {
+    public void setHrafinali(Time hrafinali) {
         this.hrafinali = hrafinali;
     }
+    
     
 }

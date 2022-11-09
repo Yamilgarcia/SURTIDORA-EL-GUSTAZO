@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-import java.sql.Date;
+import java.sql.Time;
 import java.util.*;
 
 /**
@@ -68,8 +68,8 @@ public class DAOEmpleado {
        for (Map registro : registros) {
            
            Turnos turn = new Turnos((int) registro.get("ID_turnos"),
-                   (String) registro.get("nomb"),(java.sql.Date) registro.get("hrainicio"),
-                   (java.sql.Date) registro.get("hrafinali"));
+                   (String) registro.get("nomb"),(java.sql.Time.valueOf (registro.get("hrainicio").toString())),
+                   (java.sql.Time.valueOf (registro.get("hrafinali").toString())));
            
                    turno.add(turn);
        }

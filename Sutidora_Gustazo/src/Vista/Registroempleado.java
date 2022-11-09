@@ -40,7 +40,8 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     for (int i = 0; i < listarturno.size(); i++) {
           
            jComboBoxturno.addItem(listarturno.get(i).getNomb());
-    
+           //jComboBoxturno.addItem(String.valueOf(listarturno.get(i).getID_turno()));
+           
        }
     
     
@@ -217,6 +218,11 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jPanel1.add(jTextidturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 210, 30));
 
         jComboBoxturno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxturno.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxturnoItemStateChanged(evt);
+            }
+        });
         jPanel1.add(jComboBoxturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 210, 30));
 
         jTextIDempleado.setBackground(new java.awt.Color(204, 204, 204));
@@ -284,6 +290,12 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         
         
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jComboBoxturnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxturnoItemStateChanged
+        // TODO add your handling code here:
+        //llenarturno();
+       
+    }//GEN-LAST:event_jComboBoxturnoItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
