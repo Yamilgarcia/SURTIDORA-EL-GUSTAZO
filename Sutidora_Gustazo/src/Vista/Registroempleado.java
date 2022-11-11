@@ -82,6 +82,38 @@ public class Registroempleado extends javax.swing.JInternalFrame {
              
         jTable1empleado.setModel(modelo);
     }
+     
+     public void actualizarempleado(){
+     
+     int id=Integer.parseInt(this.jTextIDempleado.getText ());
+     String nom1=this.jTextnomb1.getText ();
+     String nom2=this.jTextnomb2.getText();
+     String ape1=this.jTextapell1.getText();
+     String ape2=this.jTextapell2.getText();
+     String dire=this.jTextdirec.getText();
+     String num=this.jTextnumcelu.getText();
+     int turno=Integer.parseInt(this.jTextidturno.getText ());
+     
+     
+     DAOEmpleado dao=new DAOEmpleado();
+     int res=dao.Actualizar(id, nom1, nom2, ape1, ape2, num, dire, turno);
+     if (res==1){
+     JOptionPane.showMessageDialog(rootPane,"¡SE HA ACTUALIZADO!");
+     
+     
+     }
+     else{
+     
+     JOptionPane.showMessageDialog(rootPane,"¡ERROR AL ACTUALIZAR!");
+     
+     }
+     
+     
+     
+     
+     
+     }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,7 +139,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jTextapell2 = new javax.swing.JTextField();
         jTextdirec = new javax.swing.JTextField();
         jButtonGuardar = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1empleado = new javax.swing.JTable();
         jTextidturno = new javax.swing.JTextField();
@@ -131,7 +163,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         lavelapellido1.setForeground(new java.awt.Color(255, 255, 255));
         lavelapellido1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/usuario (1).png"))); // NOI18N
         lavelapellido1.setText("Primer Apellido :");
-        jPanel1.add(lavelapellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
+        jPanel1.add(lavelapellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, 30));
 
         PrimNombre1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         PrimNombre1.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,22 +197,27 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         jTextnomb2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 210, 30));
+        jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 210, 30));
 
         jTextnomb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 210, 30));
+        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 210, 30));
 
         jTextapell1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 210, 30));
+        jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 210, 30));
 
         jTextnumcelu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 210, 30));
+        jTextnumcelu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextnumceluActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 210, 30));
 
         jTextapell2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextapell2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 210, 30));
+        jPanel1.add(jTextapell2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 210, 30));
 
         jTextdirec.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 210, 30));
+        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 210, 30));
 
         jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -193,11 +230,16 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 110, 40));
 
-        jButtonCancelar.setBackground(new java.awt.Color(204, 0, 0));
-        jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCancelar.setText("Cancelar");
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 110, 40));
+        jButtonActualizar.setBackground(new java.awt.Color(204, 0, 0));
+        jButtonActualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 110, 40));
 
         jTable1empleado.setBackground(new java.awt.Color(204, 204, 204));
         jTable1empleado.setModel(new javax.swing.table.DefaultTableModel(
@@ -322,13 +364,23 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextIDempleadoActionPerformed
 
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+       actualizarempleado();
+       obtenerDatos();
+       limpiarCampos();
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jTextnumceluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextnumceluActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextnumceluActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PrimNombre;
     private javax.swing.JLabel PrimNombre1;
     private javax.swing.JLabel SegunNombre1;
     private javax.swing.JLabel SegunNombre2;
-    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JComboBox<String> jComboBoxturno;
     private javax.swing.JLabel jLabel1;

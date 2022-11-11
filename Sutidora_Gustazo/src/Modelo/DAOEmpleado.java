@@ -32,9 +32,24 @@ public class DAOEmpleado {
         
         
     }
-    //Metodo para actualizar un registro de la BD
-
-    //Metodo para seleccionar todos los registros de la tabla
+   
+   public int Actualizar(int id,String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc, int ID_turnos){
+   
+    String transaccion = "UPDATE EMPLEADOS SET nomb1='"
+            +nomb1+"',nomb2='"
+            +nomb2+",apell1='"
+            +apell1+",apell2='"
+            +apell2+"',numcelu='"
+            +numcelu+"',direc='"
+            +direc+"',ID_turnos'"
+            +ID_turnos+"'WHERE ID_empleado="
+            +id;
+   
+   
+           return new DataBase().Actualizar(transaccion);
+   
+   }
+   
     public List ObtenerDatos(){
         
         String transaccion ="SELECT * FROM EMPLEADOS";
@@ -91,12 +106,5 @@ public class DAOEmpleado {
         
     }
     
- //    public Proveedores Insertar(String nombrE, String ruC) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    public Proveedores Insertar(String nombrE, String ruC, String numcelU, String direC) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }   
     
 }
