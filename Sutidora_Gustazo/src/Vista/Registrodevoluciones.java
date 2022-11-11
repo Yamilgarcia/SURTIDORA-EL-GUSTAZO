@@ -66,14 +66,11 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
         jTextidproducto = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreadescrip = new javax.swing.JTextArea();
-        jTextproveedor = new javax.swing.JTextField();
-        jButtonproveedor = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabledevolucion = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -89,37 +86,22 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
                 jTextiddevoluActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextiddevolu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, 30));
+        jPanel1.add(jTextiddevolu, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 100, 220, 30));
 
         jTextidproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextidproductoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextidproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 160, 30));
+        jPanel1.add(jTextidproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 220, 30));
 
         jTextAreadescrip.setColumns(20);
         jTextAreadescrip.setRows(5);
         jScrollPane2.setViewportView(jTextAreadescrip);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, -1, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, 90));
 
-        jTextproveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextproveedorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 160, 30));
-
-        jButtonproveedor.setText("Buscar prod");
-        jButtonproveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonproveedorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 40, -1));
-
-        jButtonGuardar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonGuardar.setText("Guardar");
@@ -128,7 +110,7 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 100, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 100, 40));
 
         jTabledevolucion.setBackground(new java.awt.Color(204, 204, 204));
         jTabledevolucion.setModel(new javax.swing.table.DefaultTableModel(
@@ -150,39 +132,33 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/business_packages_boxes_products_sellingproducts_thereport_2344.png"))); // NOI18N
         jLabel10.setText("Cantidad:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, 40));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
         jLabel11.setText("ID_Producto:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/proveedor (1).png"))); // NOI18N
-        jLabel7.setText("Proveedores:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, 40));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/time_date_may_19653.png"))); // NOI18N
         jLabel12.setText("Fecha:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, 40));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/descripcion.png"))); // NOI18N
         jLabel13.setText("Descripcion:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
         jLabel2.setText("ID:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-        jPanel1.add(jTextfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 160, 30));
-        jPanel1.add(jTextcanti, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 160, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 70, 40));
+        jPanel1.add(jTextfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 220, 30));
+        jPanel1.add(jTextcanti, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 220, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -217,14 +193,6 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextidproductoActionPerformed
 
-    private void jTextproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextproveedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextproveedorActionPerformed
-
-    private void jButtonproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproveedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonproveedorActionPerformed
-
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
              String descriP=jTextAreadescrip.getText();
              String fechA=jTextfecha.getText();
@@ -255,7 +223,6 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JButton jButtonproveedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -263,7 +230,6 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -273,6 +239,5 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextfecha;
     private javax.swing.JTextField jTextiddevolu;
     private javax.swing.JTextField jTextidproducto;
-    private javax.swing.JTextField jTextproveedor;
     // End of variables declaration//GEN-END:variables
 }

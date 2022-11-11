@@ -120,7 +120,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jTextRuc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 210, -1));
 
-        jButtonGuardar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonGuardar.setText("Guardar");

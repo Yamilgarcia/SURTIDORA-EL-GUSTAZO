@@ -115,6 +115,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jTextIDempleado = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,38 +125,38 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         SegunNombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SegunNombre1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/home_home_page_house_page_home_icon_127147.png"))); // NOI18N
         SegunNombre1.setText("Dirección:");
-        jPanel1.add(SegunNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        jPanel1.add(SegunNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
 
         lavelapellido1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lavelapellido1.setForeground(new java.awt.Color(255, 255, 255));
         lavelapellido1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/usuario (1).png"))); // NOI18N
-        lavelapellido1.setText("PRIMER APELLIDO :");
-        jPanel1.add(lavelapellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+        lavelapellido1.setText("Primer Apellido :");
+        jPanel1.add(lavelapellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
 
         PrimNombre1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         PrimNombre1.setForeground(new java.awt.Color(255, 255, 255));
         PrimNombre1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/usuario (1).png"))); // NOI18N
-        PrimNombre1.setText("PRIMER NOMBRE :");
-        jPanel1.add(PrimNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
+        PrimNombre1.setText("Primer Nombre :");
+        jPanel1.add(PrimNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
         lavelapellido.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         lavelapellido.setForeground(new java.awt.Color(255, 255, 255));
         lavelapellido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/usuario (1).png"))); // NOI18N
-        lavelapellido.setText("SEGUNDO APELLIDO:");
-        jPanel1.add(lavelapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, -1, -1));
+        lavelapellido.setText("Segundo Apellido:");
+        jPanel1.add(lavelapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, -1, -1));
 
         SegunNombre2.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         SegunNombre2.setForeground(new java.awt.Color(255, 255, 255));
         SegunNombre2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SegunNombre2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/Phone_31105.png"))); // NOI18N
         SegunNombre2.setText("N-Telefóno:");
-        jPanel1.add(SegunNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
+        jPanel1.add(SegunNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, -1, -1));
 
         PrimNombre.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         PrimNombre.setForeground(new java.awt.Color(255, 255, 255));
         PrimNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/usuario (1).png"))); // NOI18N
-        PrimNombre.setText("SEGUNDO NOMBRE :");
-        jPanel1.add(PrimNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, -1, -1));
+        PrimNombre.setText("Segundo Nombre:");
+        jPanel1.add(PrimNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,24 +165,24 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         jTextnomb2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 210, -1));
+        jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 210, 30));
 
         jTextnomb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 30));
+        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 210, 30));
 
         jTextapell1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 210, -1));
+        jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 210, 30));
 
         jTextnumcelu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 210, -1));
+        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 210, 30));
 
         jTextapell2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextapell2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 210, -1));
+        jPanel1.add(jTextapell2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 210, 30));
 
         jTextdirec.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 210, -1));
+        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 210, 30));
 
-        jButtonGuardar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonGuardar.setText("Guardar");
@@ -190,13 +191,13 @@ public class Registroempleado extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 110, 40));
 
-        jButtonCancelar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonCancelar.setBackground(new java.awt.Color(204, 0, 0));
         jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCancelar.setText("Cancelar");
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 110, 40));
+        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 110, 40));
 
         jTable1empleado.setBackground(new java.awt.Color(204, 204, 204));
         jTable1empleado.setModel(new javax.swing.table.DefaultTableModel(
@@ -215,7 +216,12 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 840, 110));
 
         jTextidturno.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jTextidturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 210, 30));
+        jTextidturno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextidturnoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextidturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 210, 30));
 
         jComboBoxturno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxturno.addItemListener(new java.awt.event.ItemListener() {
@@ -223,22 +229,33 @@ public class Registroempleado extends javax.swing.JInternalFrame {
                 jComboBoxturnoItemStateChanged(evt);
             }
         });
-        jPanel1.add(jComboBoxturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 210, 30));
+        jPanel1.add(jComboBoxturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 210, 30));
 
         jTextIDempleado.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jTextIDempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 140, -1));
+        jTextIDempleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIDempleadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextIDempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 210, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/employee_account_business_time_clock_icon_124657.png"))); // NOI18N
         jLabel3.setText("Turno:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
-        jLabel4.setText(" ID ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 90, -1));
+        jLabel4.setText(" ID Turno");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 30, 130, -1));
+
+        jLabel5.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
+        jLabel5.setText("ID Empleado:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 840, 550));
@@ -297,6 +314,14 @@ public class Registroempleado extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_jComboBoxturnoItemStateChanged
 
+    private void jTextidturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextidturnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextidturnoActionPerformed
+
+    private void jTextIDempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIDempleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIDempleadoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PrimNombre;
@@ -310,6 +335,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1empleado;

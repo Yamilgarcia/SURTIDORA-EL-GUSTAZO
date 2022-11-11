@@ -185,7 +185,7 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         jTextpreciocom.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextpreciocom, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 210, -1));
 
-        jButtonGuardar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonGuardar.setText("Guardar");
@@ -209,7 +209,7 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 140, 30));
 
-        jButtonCancelar.setBackground(new java.awt.Color(0, 51, 102));
+        jButtonCancelar.setBackground(new java.awt.Color(204, 0, 0));
         jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCancelar.setText("Cancelar");

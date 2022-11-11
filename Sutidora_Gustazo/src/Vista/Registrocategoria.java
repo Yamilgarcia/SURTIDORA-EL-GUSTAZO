@@ -71,20 +71,23 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/categorias (1)_1.png"))); // NOI18N
         jLabel2.setText("Tipo Categoría");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
         jLabel3.setText("ID Categoría:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/productos.png"))); // NOI18N
         jLabel4.setText("Nombre:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 120, 30));
-        jPanel1.add(jTextidcategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 170, 30));
-        jPanel1.add(jTextnomb, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 110, 30));
+        jPanel1.add(jTextidcategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 150, 30));
+        jPanel1.add(jTextnomb, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 150, 30));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 0));
         jButton1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
@@ -124,6 +127,8 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTablecategorias);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 640, 160));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
