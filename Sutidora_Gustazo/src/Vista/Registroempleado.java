@@ -68,12 +68,12 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         
         DefaultTableModel modelo=new DefaultTableModel();
         
-       String[] columnas={"ID","Nomb1","Nomb2","Apell1","Apell2","Direc","Numcelu","ID Turno"};
+       String[] columnas={"ID","Nomb1","Nomb2","Apell1","Apell2","Telefono","Direc","ID Turno"};
         
         modelo.setColumnIdentifiers(columnas);
         for (Empleados  prov:empleado){
             
-             String[]renglon = {Integer.toString(prov.getID_empleado()),prov.getNomb1(),prov.getNomb2(),prov.getApell1(),prov.getApell2(),prov.getDirec(),prov.getNumcelu(),
+             String[]renglon = {Integer.toString(prov.getID_empleado()),prov.getNomb1(),prov.getNomb2(),prov.getApell1(),prov.getApell2(),prov.getNumcelu(),prov.getDirec(),
                  Integer.toString(prov.getID_turnos())};
                  modelo.addRow(renglon);
 
@@ -83,36 +83,11 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jTable1empleado.setModel(modelo);
     }
      
-     public void actualizarempleado(){
-     
-     int id=Integer.parseInt(this.jTextIDempleado.getText ());
-     String nom1=this.jTextnomb1.getText ();
-     String nom2=this.jTextnomb2.getText();
-     String ape1=this.jTextapell1.getText();
-     String ape2=this.jTextapell2.getText();
-     String dire=this.jTextdirec.getText();
-     String num=this.jTextnumcelu.getText();
-     int turno=Integer.parseInt(this.jTextidturno.getText ());
      
      
-     DAOEmpleado dao=new DAOEmpleado();
-     int res=dao.Actualizar(id, nom1, nom2, ape1, ape2, num, dire, turno);
-     if (res==1){
-     JOptionPane.showMessageDialog(rootPane,"¡SE HA ACTUALIZADO!");
+       
      
-     
-     }
-     else{
-     
-     JOptionPane.showMessageDialog(rootPane,"¡ERROR AL ACTUALIZAR!");
-     
-     }
-     
-     
-     
-     
-     
-     }
+   
      
 
     /**
@@ -148,6 +123,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButtoneditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -244,13 +220,13 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jTable1empleado.setBackground(new java.awt.Color(204, 204, 204));
         jTable1empleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
             }
         ));
         jScrollPane1.setViewportView(jTable1empleado);
@@ -299,6 +275,14 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jLabel5.setText("ID Empleado:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
+        jButtoneditar.setText("Editar");
+        jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtoneditarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 840, 550));
 
@@ -318,12 +302,12 @@ public class Registroempleado extends javax.swing.JInternalFrame {
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         
-     String nomb1 = jTextnomb1.getText();
+        String nomb1 = jTextnomb1.getText();
         String nomb2= jTextnomb2.getText();
-        String  apell1=jTextapell1.getText();
-        String  apell2=jTextapell2.getText();
-        String  direc= jTextdirec.getText();
-        String  num= jTextnumcelu.getText();
+        String apell1=jTextapell1.getText();
+        String apell2=jTextapell2.getText();
+        String direc= jTextdirec.getText();
+        String num= jTextnumcelu.getText();
         String id_turno= jTextidturno.getText();
         
        
@@ -374,6 +358,75 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextnumceluActionPerformed
 
+    private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
+        int fila=this.jTable1empleado.getSelectedRow();
+        if (fila==-1){
+        JOptionPane.showMessageDialog (rootPane, "Seleccione un registro de la tabla");
+        }
+        else{
+            
+            try{
+              int id=Integer.parseInt((String) this.jTable1empleado.getValueAt(fila, 0).toString());
+              String nom1= (String) this.jTable1empleado.getValueAt (fila, 1);
+              String nom2= (String) this.jTable1empleado.getValueAt (fila, 2);
+              String ape1=(String) this.jTable1empleado.getValueAt (fila, 3);
+              String ape2=(String) this.jTable1empleado.getValueAt (fila, 4);
+              String numcelu= (String) this.jTable1empleado.getValueAt (fila, 5);
+              String direc= (String) this.jTable1empleado.getValueAt (fila, 6);
+              int turno=Integer.parseInt((String) this.jTable1empleado.getValueAt(fila, 7).toString());
+              
+              jTextIDempleado.setText (""+id);
+              jTextnomb1.setText(""+nom1);
+              jTextnomb2.setText(""+nom2);
+              jTextapell1.setText(""+ape1);
+              jTextapell2.setText(""+ape2);
+              jTextnumcelu.setText (""+numcelu);
+              jTextdirec.setText(""+direc);
+              jTextidturno.setText(""+turno);
+            }catch (NumberFormatException e) {
+                
+                e.printStackTrace();
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButtoneditarActionPerformed
+    public void actualizarempleado(){
+     
+     int id=Integer.parseInt(this.jTextIDempleado.getText());
+     String nom1=this.jTextnomb1.getText();
+     String nom2=this.jTextnomb2.getText();
+     String ape1=this.jTextapell1.getText();
+     String ape2=this.jTextapell2.getText();
+     String dire=this.jTextdirec.getText();
+     String num=this.jTextnumcelu.getText();
+      int idturno=Integer.parseInt(this.jTextidturno.getText());
+     
+     
+     DAOEmpleado dao=new DAOEmpleado();
+     int Emp=dao.Actualizar(id, nom1, nom2, ape1, ape2, dire, num, idturno);
+     if (Emp== 1){
+     JOptionPane.showMessageDialog(rootPane,"¡SE HA ACTUALIZADO!");
+     
+     
+     }
+     else{
+     
+     JOptionPane.showMessageDialog(rootPane,"¡ERROR AL ACTUALIZAR!");
+     
+     }
+     
+     
+     
+     
+     
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PrimNombre;
@@ -382,6 +435,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel SegunNombre2;
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtoneditar;
     private javax.swing.JComboBox<String> jComboBoxturno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
