@@ -35,7 +35,7 @@ public class DAOProductos {
     }
     
     public int Actualizar(int ID_producto, String nomb, float preciovent,
-            float preciocom, float canti, Date fechavenci, String descrip, int ID_categoria){
+            float preciocom, float canti, java.sql.Date fechavenci, String descrip, int ID_categoria){
         
         
         String transaccion = "UPDATE PRODUCTOS SET  nomb ='"

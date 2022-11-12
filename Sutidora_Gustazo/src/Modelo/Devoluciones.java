@@ -16,7 +16,7 @@ public class Devoluciones {
     private Date fecha;
     private int ID_producto;
 
-    public Devoluciones(int ID_devolu, String descrip, float canti, Date fecha, int ID_producto) {
+    public Devoluciones(int ID_devolu, String descrip, float canti, java.sql.Date fecha, int ID_producto) {
         this.ID_devolu = ID_devolu;
         this.descrip = descrip;
         this.canti = canti;

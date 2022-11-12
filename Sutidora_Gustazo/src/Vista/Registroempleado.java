@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vista;
+
 import Modelo.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +11,6 @@ import java.util.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.Date;
 import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -23,72 +23,58 @@ public class Registroempleado extends javax.swing.JInternalFrame {
      */
     public Registroempleado() {
         initComponents();
-         jTextIDempleado.setEnabled(false);
-         
+        jTextIDempleado.setEnabled(false);
 
         llenarturno();
-        
+
     }
-    
-      private void llenarturno(){
-    
-    DAOEmpleado modTurno = new DAOEmpleado();
-    ArrayList<Turnos> listarturno = (ArrayList<Turnos>) modTurno.ObtenerDatosTurnos();
-    
-    jComboBoxturno.removeAllItems();
-    
-    for (int i = 0; i < listarturno.size(); i++) {
-          
-           jComboBoxturno.addItem(listarturno.get(i).getNomb());
-           //jComboBoxturno.addItem(String.valueOf(listarturno.get(i).getID_turno()));
-           
-       }
-    
-    
-    
-    
-}
-    
-     public void limpiarCampos(){
-        
-      jTextnomb1.setText("");
-      jTextnomb2.setText("");
-      jTextapell1.setText("");
-      jTextapell2.setText("");
-      jTextdirec.setText("");
-      jTextnumcelu.setText("");
 
-        
-        
-      }
-    
-     public void obtenerDatos(){
-        
-        List<Empleados> empleado=new DAOEmpleado().ObtenerDatos();
-        
-        DefaultTableModel modelo=new DefaultTableModel();
-        
-       String[] columnas={"ID","Nomb1","Nomb2","Apell1","Apell2","Telefono","Direc","ID Turno"};
-        
+    private void llenarturno() {
+
+        DAOEmpleado modTurno = new DAOEmpleado();
+        ArrayList<Turnos> listarturno = (ArrayList<Turnos>) modTurno.ObtenerDatosTurnos();
+
+        jComboBoxturno.removeAllItems();
+
+        for (int i = 0; i < listarturno.size(); i++) {
+
+            jComboBoxturno.addItem(listarturno.get(i).getNomb());
+            //jComboBoxturno.addItem(String.valueOf(listarturno.get(i).getID_turno()));
+
+        }
+
+    }
+
+    public void limpiarCampos() {
+
+        jTextnomb1.setText("");
+        jTextnomb2.setText("");
+        jTextapell1.setText("");
+        jTextapell2.setText("");
+        jTextdirec.setText("");
+        jTextnumcelu.setText("");
+
+    }
+
+    public void obtenerDatos() {
+
+        List<Empleados> empleado = new DAOEmpleado().ObtenerDatos();
+
+        DefaultTableModel modelo = new DefaultTableModel();
+
+        String[] columnas = {"ID", "Nomb1", "Nomb2", "Apell1", "Apell2", "Telefono", "Direc", "ID Turno"};
+
         modelo.setColumnIdentifiers(columnas);
-        for (Empleados  prov:empleado){
-            
-             String[]renglon = {Integer.toString(prov.getID_empleado()),prov.getNomb1(),prov.getNomb2(),prov.getApell1(),prov.getApell2(),prov.getNumcelu(),prov.getDirec(),
-                 Integer.toString(prov.getID_turnos())};
-                 modelo.addRow(renglon);
+        for (Empleados prov : empleado) {
 
-             }
-                 
-             
+            String[] renglon = {Integer.toString(prov.getID_empleado()), prov.getNomb1(), prov.getNomb2(), prov.getApell1(), prov.getApell2(), prov.getNumcelu(), prov.getDirec(),
+                Integer.toString(prov.getID_turnos())};
+            modelo.addRow(renglon);
+
+        }
+
         jTable1empleado.setModel(modelo);
     }
-     
-     
-     
-       
-     
-   
-     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -305,43 +291,41 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        
+
         String nomb1 = jTextnomb1.getText();
-        String nomb2= jTextnomb2.getText();
-        String apell1=jTextapell1.getText();
-        String apell2=jTextapell2.getText();
-        String direc= jTextdirec.getText();
-        String num= jTextnumcelu.getText();
-        String id_turno= jTextidturno.getText();
-        
-       
-        if(nomb1.contentEquals("")||nomb2.contentEquals("")||
-                direc.contentEquals("")||num.contentEquals("")||
-                apell1.contentEquals("")||apell2.contentEquals("")){
+        String nomb2 = jTextnomb2.getText();
+        String apell1 = jTextapell1.getText();
+        String apell2 = jTextapell2.getText();
+        String direc = jTextdirec.getText();
+        String num = jTextnumcelu.getText();
+        String id_turno = jTextidturno.getText();
+
+        if (nomb1.contentEquals("") || nomb2.contentEquals("")
+                || direc.contentEquals("") || num.contentEquals("")
+                || apell1.contentEquals("") || apell2.contentEquals("")) {
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
-        }else{
-            try{
-               int id_turn = Integer.parseInt(id_turno);
-                Empleados em =new DAOEmpleado().Insertar(nomb1, nomb2, apell1, apell2, num, direc, id_turn);
+        } else {
+            try {
+                int id_turn = Integer.parseInt(id_turno);
+                Empleados em = new DAOEmpleado().Insertar(nomb1, nomb2, apell1, apell2, num, direc, id_turn);
                 JOptionPane.showMessageDialog(rootPane, "Registro agregado");
-                
-              }catch (Exception e){
+
+            } catch (Exception e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(rootPane, "No se agrego el registro");
-             }  
-         }
+            }
+        }
 
-        
         obtenerDatos();
-        limpiarCampos();  
-        
-        
+        limpiarCampos();
+
+
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jComboBoxturnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxturnoItemStateChanged
         // TODO add your handling code here:
         //llenarturno();
-       
+
     }//GEN-LAST:event_jComboBoxturnoItemStateChanged
 
     private void jTextidturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextidturnoActionPerformed
@@ -353,9 +337,9 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextIDempleadoActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-       actualizarempleado();
-       obtenerDatos();
-       limpiarCampos();
+        actualizarEmpleado();
+        obtenerDatos();
+        limpiarCampos();
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextnumceluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextnumceluActionPerformed
@@ -363,74 +347,57 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextnumceluActionPerformed
 
     private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
-        int fila=this.jTable1empleado.getSelectedRow();
-        if (fila==-1){
-        JOptionPane.showMessageDialog (rootPane, "Seleccione un registro de la tabla");
-        }
-        else{
-            
-            try{
-              int id=Integer.parseInt((String) this.jTable1empleado.getValueAt(fila, 0).toString());
-              String nom1= (String) this.jTable1empleado.getValueAt (fila, 1);
-              String nom2= (String) this.jTable1empleado.getValueAt (fila, 2);
-              String ape1=(String) this.jTable1empleado.getValueAt (fila, 3);
-              String ape2=(String) this.jTable1empleado.getValueAt (fila, 4);
-              String numcelu= (String) this.jTable1empleado.getValueAt (fila, 5);
-              String direc= (String) this.jTable1empleado.getValueAt (fila, 6);
-              int turno=Integer.parseInt((String) this.jTable1empleado.getValueAt(fila, 7).toString());
-              
-              jTextIDempleado.setText (""+id);
-              jTextnomb1.setText(""+nom1);
-              jTextnomb2.setText(""+nom2);
-              jTextapell1.setText(""+ape1);
-              jTextapell2.setText(""+ape2);
-              jTextnumcelu.setText (""+numcelu);
-              jTextdirec.setText(""+direc);
-              jTextidturno.setText(""+turno);
-            }catch (NumberFormatException e) {
-                
+
+        int fila = this.jTable1empleado.getSelectedRow();
+        if (fila == -1) {
+
+            JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
+
+        } else {
+
+            try {
+                int idem = Integer.parseInt((String) this.jTable1empleado.getValueAt(fila, 0).toString());
+                String primNomb = (String) this.jTable1empleado.getValueAt(fila, 1);
+                String seguNomb = (String) this.jTable1empleado.getValueAt(fila, 2);
+                String primApell = (String) this.jTable1empleado.getValueAt(fila, 3);
+                String seguApell = (String) this.jTable1empleado.getValueAt(fila, 4);
+                String nuCel = (String) this.jTable1empleado.getValueAt(fila, 5);
+                String direci = (String) this.jTable1empleado.getValueAt(fila, 6);
+                int idturn = Integer.parseInt((String) this.jTable1empleado.getValueAt(fila, 7).toString());
+
+                jTextIDempleado.setText("" + idem);
+                jTextnomb1.setText("" + primNomb);
+                jTextnomb2.setText("" + seguNomb);
+                jTextapell1.setText("" + primApell);
+                jTextapell2.setText("" + seguApell);
+                jTextnumcelu.setText("" + nuCel);
+                jTextdirec.setText("" + direci);
+                jTextidturno.setText("" + idturn);
+
+            } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
-            
         }
-        
-        
-        
-        
-        
-        
-        
     }//GEN-LAST:event_jButtoneditarActionPerformed
-    public void actualizarempleado(){
-     
-     int id=Integer.parseInt(this.jTextIDempleado.getText());
-     String nom1=this.jTextnomb1.getText();
-     String nom2=this.jTextnomb2.getText();
-     String ape1=this.jTextapell1.getText();
-     String ape2=this.jTextapell2.getText();
-     String dire=this.jTextdirec.getText();
-     String num=this.jTextnumcelu.getText();
-      int idturno=Integer.parseInt(this.jTextidturno.getText());
-     
-     
-     DAOEmpleado dao=new DAOEmpleado();
-     int Emp=dao.Actualizar(id, nom1, nom2, ape1, ape2, dire, num, idturno);
-     if (Emp== 1){
-     JOptionPane.showMessageDialog(rootPane,"¡SE HA ACTUALIZADO!");
-     
-     
-     }
-     else{
-     
-     JOptionPane.showMessageDialog(rootPane,"¡ERROR AL ACTUALIZAR!");
-     
-     }
-     
-     
-     
-     
-     
-     }
+
+    public void actualizarEmpleado() {
+        int idem = Integer.parseInt(this.jTextIDempleado.getText());
+        String primNomb = this.jTextnomb1.getText();
+        String seguNomb = this.jTextnomb2.getText();
+        String primApell = this.jTextapell1.getText();
+        String seguApell = this.jTextapell2.getText();
+        String nuCel = this.jTextnumcelu.getText();
+        String direci = this.jTextdirec.getText();
+        int idturn = Integer.parseInt(this.jTextidturno.getText());
+
+        DAOEmpleado dao = new DAOEmpleado();
+        int emmp = dao.Actualizar(idem, primNomb, seguNomb, primApell, seguApell, nuCel, direci, idturn);
+        if (emmp == 1) {
+            JOptionPane.showMessageDialog(rootPane, "¡Registro Actualizado!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "¡OCURRIO UN ERROR!");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PrimNombre;
