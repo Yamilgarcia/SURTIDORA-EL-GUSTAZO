@@ -83,6 +83,10 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         jTextcedula = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 20)); // NOI18N

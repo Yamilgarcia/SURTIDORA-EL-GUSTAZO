@@ -150,6 +150,10 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SegunNombre1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N

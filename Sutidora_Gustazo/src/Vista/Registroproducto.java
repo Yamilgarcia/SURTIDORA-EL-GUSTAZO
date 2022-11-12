@@ -416,11 +416,12 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         float precven = Float.parseFloat(this.jTextPreciovent.getText());
         float preccom = Float.parseFloat(this.jTextpreciocom.getText());
         float cant = Float.parseFloat(this.jTextcanti.getText());
+        int idcate = Integer.parseInt(this.jTextIDCategoria.getText());
         String descrr = this.jTextAreaDescrip.getText();
         Date fecven = Date.valueOf(this.jTextfechavenci.getText());
 
         DAOProductos dao = new DAOProductos();
-        int prodd = dao.Actualizar(idpr, nom, precven, preccom, cant, fecven, descrr, idpr);
+        int prodd = dao.Actualizar(idpr, nom, precven, preccom, cant, fecven, descrr, idcate);
         if (prodd == 1) {
             JOptionPane.showMessageDialog(rootPane, "¡Producto Actualizado!");
         } else {
