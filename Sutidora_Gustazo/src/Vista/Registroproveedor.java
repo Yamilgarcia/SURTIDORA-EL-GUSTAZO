@@ -76,6 +76,10 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jTableproveedores = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N

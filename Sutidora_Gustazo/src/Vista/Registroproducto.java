@@ -23,26 +23,26 @@ public class Registroproducto extends javax.swing.JInternalFrame {
      */
     public Registroproducto() {
         initComponents();
+        
 
         jTextIDProducto.setEnabled(false);
+//        jTextIDCategoria.setEnabled(false);
 
-        llenarcategoria();
-
+//        llenarcombo();
     }
 
-    private void llenarcategoria() {
+    public void llenarcombo() {
 
-        DAOProductos modCategoria = new DAOProductos();
-        ArrayList<Tipocategoria> listacategoria = (ArrayList<Tipocategoria>) modCategoria.ObtenerDatosCategoria();
-
-        jComboBoxCategoria.removeAllItems();
-
-        for (int i = 0; i < listacategoria.size(); i++) {
-
-            jComboBoxCategoria.addItem(listacategoria.get(i).getNomb());
-
-        }
-
+//        List<Tipocategoria> categorias = new DAOtipocategoria().ObtenerDatos();
+//        for (int i = 0; i < categorias.size(); i++) {
+//
+//            jComboBoxCategoria.addItem(new Tipocategoria(categorias.get(i).getID_categoria(),
+//                    categorias.get(i).getNomb()));
+//        }
+//
+//        int id = jComboBoxCategoria.getItemAt(jComboBoxCategoria.getSelectedIndex()).getID_categoria();
+//
+//        jTextIDCategoria.setText("" + id);
     }
 
     public void limpiarcampo() {
@@ -103,7 +103,9 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         jTextpreciocom = new javax.swing.JTextField();
         jButtonGuardar = new javax.swing.JButton();
         jComboBoxCategoria = new javax.swing.JComboBox<>();
+        jButtonEditar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
         jTextIDProducto = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -113,6 +115,10 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTablaProdu = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -199,15 +205,31 @@ public class Registroproducto extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 110, 40));
 
         jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxCategoria.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxCategoriaItemStateChanged(evt);
+            }
+        });
         jComboBoxCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxCategoriaActionPerformed(evt);
             }
         });
         jPanel1.add(jComboBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 140, 30));
+
+        jButtonEditar.setBackground(new java.awt.Color(0, 153, 153));
+        jButtonEditar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEditar.setText("Editar");
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 110, 40));
 
         jButtonCancelar.setBackground(new java.awt.Color(204, 0, 0));
         jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -218,7 +240,18 @@ public class Registroproducto extends javax.swing.JInternalFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 110, 40));
+        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 110, 40));
+
+        jButtonActualizar.setBackground(new java.awt.Color(0, 153, 153));
+        jButtonActualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 408, -1, 40));
 
         jTextIDProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,23 +367,80 @@ public class Registroproducto extends javax.swing.JInternalFrame {
 
     private void jComboBoxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaActionPerformed
 
-        //jComboBoxCategoria.addActionListener(new  ActionListener() {
-          //  @Override
-            //public void actionPerformed(ActionEvent e) {
-              //  jTextIDCategoria.setText(jComboBoxCategoria.getSelectedItem().toString());
-            //}
-        //});
-        
-        
 
-        
-        
-        
     }//GEN-LAST:event_jComboBoxCategoriaActionPerformed
+
+    private void jComboBoxCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaItemStateChanged
+//        int id = jComboBoxCategoria.getItemAt(jComboBoxCategoria.getSelectedIndex()).getID_categoria();
+//
+//        jTextIDCategoria.setText("" + id);
+    }//GEN-LAST:event_jComboBoxCategoriaItemStateChanged
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+        int fila = this.jTablaProdu.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
+        } else {
+            try {
+                int idpr = Integer.parseInt((String) this.jTablaProdu.getValueAt(fila, 0).toString());
+                String nom = (String) this.jTablaProdu.getValueAt(fila, 1);
+                float precven = Float.parseFloat((String) this.jTablaProdu.getValueAt(fila, 2).toString());
+                float preccom = Float.parseFloat((String) this.jTablaProdu.getValueAt(fila, 3).toString());
+                float can = Float.parseFloat((String) this.jTablaProdu.getValueAt(fila, 4).toString());
+                int idcate = Integer.parseInt((String) this.jTablaProdu.getValueAt(fila, 5).toString());
+                String descrr = (String) this.jTablaProdu.getValueAt(fila, 6);
+                Date fecven = Date.valueOf((String) this.jTablaProdu.getValueAt(fila, 7).toString());
+                
+                
+
+                jTextIDProducto.setText("" + idpr);
+                jTextNombre.setText("" + nom);
+                jTextPreciovent.setText("" + precven);
+                jTextpreciocom.setText("" + preccom);
+                jTextcanti.setText("" + can);
+                jTextIDCategoria.setText("" + idcate);
+                jTextAreaDescrip.setText("" + descrr);
+                jTextfechavenci.setText(String.valueOf(fecven));
+                
+                
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    public void actualizarproducto() {
+        int idpr = Integer.parseInt(this.jTextIDProducto.getText());
+        String nom = this.jTextNombre.getText();
+        float precven = Float.parseFloat(this.jTextPreciovent.getText());
+        float preccom = Float.parseFloat(this.jTextpreciocom.getText());
+        float cant = Float.parseFloat(this.jTextcanti.getText());
+        int idcate = Integer.parseInt(this.jTextIDCategoria.getText());
+        String descrr = this.jTextAreaDescrip.getText();
+        Date fecven = Date.valueOf(this.jTextfechavenci.getText());
+
+        DAOProductos dao = new DAOProductos();
+        int prodd = dao.Actualizar(idpr, nom, precven, preccom, cant, fecven, descrr, idcate);
+        if (prodd == 1) {
+            JOptionPane.showMessageDialog(rootPane, "¡Producto Actualizado!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "¡Ocurrio un ERROR!");
+        }
+    }
+
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        actualizarproducto();
+        ObtenerDatos();
+        limpiarcampo();
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JComboBox<String> jComboBoxCategoria;
     private javax.swing.JLabel jLabel1;

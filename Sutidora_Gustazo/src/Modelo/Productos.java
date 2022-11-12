@@ -3,21 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
+
 import java.sql.Date;
+import javax.swing.JFrame;
 
 /**
  *
  * @author PC
  */
 public class Productos {
-private int ID_producto;
-private String nomb;
-private float preciovent;
-private float preciocom;
-private float canti;
-private Date fechavenci;
-private String descrip;
-private int ID_categoria;
+
+    private int ID_producto;
+    private String nomb;
+    private float preciovent;
+    private float preciocom;
+    private float canti;
+    private Date fechavenci;
+    private String descrip;
+    private int ID_categoria;
 
     public Productos(int ID_producto, String nomb, float preciovent, float preciocom, float canti, Date fechavenci, String descrip, int ID_categoria) {
         this.ID_producto = ID_producto;
@@ -104,18 +107,6 @@ private int ID_categoria;
         this.ID_categoria = ID_categoria;
     }
 
-
-
-
-   
-
-
-
-
     
 
-    
-
-
-   
 }

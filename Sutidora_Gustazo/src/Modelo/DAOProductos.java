@@ -34,6 +34,21 @@ public class DAOProductos {
 
     }
     
+    public int Actualizar(int ID_producto, String nomb, float preciovent,
+            float preciocom, float canti, Date fechavenci, String descrip, int ID_categoria){
+        
+        
+        String transaccion = "UPDATE PRODUCTOS SET  nomb ='"
+                +nomb+ "', preciovent='"
+                +preciovent+ "', preciocom='"
+                +preciocom+ "', canti='"
+                +canti+ "', fechavenci='"
+                +fechavenci+ "', descrip='"
+                +descrip+ "', ID_categoria='"
+                +ID_categoria+ "' WHERE id_producto= "
+                +ID_producto;
+        return new DataBase().Actualizar(transaccion);
+    }
     
 
     //Metodo para actualizar un registro de la BD
@@ -64,22 +79,7 @@ public class DAOProductos {
         return productos;//retorna todos los productos ubicados  en la tabla de la BD
     }
 
-    public List ObtenerDatosCategoria() {
-        String transaccion = "SELECT * FROM TIPOCATEGORIA";
-        List<Map> registros = new DataBase().Listar(transaccion);
-        List<Tipocategoria> categorias = new ArrayList();
-
-        for (Map registro : registros) {
-
-            Tipocategoria cat = new Tipocategoria((int) registro.get("ID_categoria"),
-                    (String) registro.get("nomb"));
-
-            categorias.add(cat);
-
-        }
-        return categorias;
-
-    }
+    
     
     
     

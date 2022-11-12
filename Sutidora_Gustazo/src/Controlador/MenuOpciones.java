@@ -20,6 +20,7 @@ public class MenuOpciones extends javax.swing.JFrame {
     
     public MenuOpciones() {
         initComponents();
+        this.setLocation(425,200);
         
         setTitle("Menu Opciones Surtidora EL Gustazo ");//Agrego el titulo al MDI
         producto= new Registroproducto();
