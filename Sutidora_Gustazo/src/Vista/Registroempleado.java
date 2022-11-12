@@ -176,9 +176,9 @@ public class Registroempleado extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 110, 40));
 
-        jButtonActualizar.setBackground(new java.awt.Color(204, 0, 0));
+        jButtonActualizar.setBackground(new java.awt.Color(0, 153, 153));
         jButtonActualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonActualizar.setText("Actualizar");
@@ -247,13 +247,16 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jLabel5.setText("ID Empleado:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
+        jButtoneditar.setBackground(new java.awt.Color(0, 153, 153));
+        jButtoneditar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtoneditar.setForeground(new java.awt.Color(255, 255, 255));
         jButtoneditar.setText("Editar");
         jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtoneditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
+        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 110, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 840, 550));
