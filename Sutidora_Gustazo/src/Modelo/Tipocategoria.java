@@ -38,4 +38,7 @@ public class Tipocategoria {
         this.nomb = nomb;
     }
     
+//    public String toString(){
+//        return ID_categoria + " - " + nomb;
+//    }
 }
