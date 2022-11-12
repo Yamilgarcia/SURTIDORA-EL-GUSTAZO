@@ -32,16 +32,17 @@ public class DAOEmpleado {
 
     }
 
-    public int Actualizar(int ID_empleado, String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc, int ID_turnos) {
+    public int Actualizar(int ID_empleado, String nomb1, String nomb2, String apell1,
+            String apell2, String numcelu, String direc, int ID_turnos) {
 
         String transaccion = "UPDATE EMPLEADOS SET nomb1='"
-                + nomb1 + "',nomb2='"
-                + nomb2 + ",apell1='"
-                + apell1 + ",apell2='"
-                + apell2 + "',numcelu='"
-                + numcelu + "',direc='"
-                + direc + "',ID_turnos'"
-                + ID_turnos + "'WHERE ID_empleado="
+                + nomb1 + "', nomb2='"
+                + nomb2 + "', apell1='"
+                + apell1 + "', apell2='"
+                + apell2 + "', numcelu='"
+                + numcelu + "', direc='"
+                + direc + "', ID_turnos='"
+                + ID_turnos + "' WHERE ID_empleado="
                 + ID_empleado;
 
         return new DataBase().Actualizar(transaccion);

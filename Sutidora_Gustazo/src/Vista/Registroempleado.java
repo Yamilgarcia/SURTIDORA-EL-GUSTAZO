@@ -25,24 +25,6 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         initComponents();
         jTextIDempleado.setEnabled(false);
 
-        llenarturno();
-
-    }
-
-    private void llenarturno() {
-
-        DAOEmpleado modTurno = new DAOEmpleado();
-        ArrayList<Turnos> listarturno = (ArrayList<Turnos>) modTurno.ObtenerDatosTurnos();
-
-        jComboBoxturno.removeAllItems();
-
-        for (int i = 0; i < listarturno.size(); i++) {
-
-            jComboBoxturno.addItem(listarturno.get(i).getNomb());
-            //jComboBoxturno.addItem(String.valueOf(listarturno.get(i).getID_turno()));
-
-        }
-
     }
 
     public void limpiarCampos() {
