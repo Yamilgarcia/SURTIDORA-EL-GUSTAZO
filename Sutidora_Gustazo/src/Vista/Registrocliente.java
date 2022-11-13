@@ -41,7 +41,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         
         DefaultTableModel modelo=new DefaultTableModel();
         
-       String[] columnas={"ID","Primer Nombre","Segundo Nombre","Primer Apellido","Segundo Apellido","Dirección","Teléfono"};
+       String[] columnas={"ID","Primer Nombre","Segundo Nombre","Primer Apellido","Segundo Apellido","Teléfono","Dirección"};
         
         modelo.setColumnIdentifiers(columnas);
         for (Clientes  clien:cliente){
@@ -54,8 +54,10 @@ public class Registrocliente extends javax.swing.JInternalFrame {
                  
              
         jTableclientes.setModel(modelo);
+       
 
      }
+     
      
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -71,7 +73,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtoneditar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableclientes = new javax.swing.JTable();
         jTextnomb2 = new javax.swing.JTextField();
@@ -81,6 +83,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         jTextdirec = new javax.swing.JTextField();
         jTextnumcelu = new javax.swing.JTextField();
         jTextcedula = new javax.swing.JTextField();
+        jButtonactualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -148,11 +151,16 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, 40));
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Cancelar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, -1, 40));
+        jButtoneditar.setBackground(new java.awt.Color(255, 0, 0));
+        jButtoneditar.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jButtoneditar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtoneditar.setText("editar");
+        jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtoneditarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, -1, 40));
 
         jTableclientes.setBackground(new java.awt.Color(204, 204, 204));
         jTableclientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -188,6 +196,14 @@ public class Registrocliente extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jTextcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 30));
+
+        jButtonactualizar.setText("Actualizar");
+        jButtonactualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonactualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 480));
@@ -244,10 +260,71 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextcedulaActionPerformed
 
+    private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
+              int fila = this.jTableclientes.getSelectedRow();
+        if (fila == -1) {
+
+            JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
+
+        } else {
+
+            try {
+                String cedula= (String) this.jTableclientes.getValueAt(fila, 0);
+                String primNomb = (String) this.jTableclientes.getValueAt(fila, 1);
+                String seguNomb = (String) this.jTableclientes.getValueAt(fila, 2);
+                String primApell = (String) this.jTableclientes.getValueAt(fila, 3);
+                String seguApell = (String) this.jTableclientes.getValueAt(fila, 4);
+                String nuCel = (String) this.jTableclientes.getValueAt(fila, 5);
+                String direci = (String) this.jTableclientes.getValueAt(fila, 6);
+                
+
+                jTextcedula.setText("" + cedula);
+                jTextnomb1.setText("" + primNomb);
+                jTextnomb2.setText("" + seguNomb);
+                jTextapell1.setText("" + primApell);
+                jTextapell2.setText("" + seguApell);
+                jTextnumcelu.setText("" + nuCel);
+                jTextdirec.setText("" + direci);
+                
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+             jTextcedula.setEnabled(false);
+        }
+
+    }//GEN-LAST:event_jButtoneditarActionPerformed
+        public void actualizarCliente() {
+        String cedulA= this.jTextcedula.getText();
+        String nomB1 = this.jTextnomb1.getText();
+        String nomB2 = this.jTextnomb2.getText();
+        String Apell1 = this.jTextapell1.getText();
+        String Apell2 = this.jTextapell2.getText();
+        String numcelU = this.jTextnumcelu.getText();
+        String direC = this.jTextdirec.getText();
+        
+        
+
+        DAOClientes dao = new DAOClientes();
+        int client = dao.Actualizar(cedulA, nomB1, nomB2, Apell1, Apell2, numcelU, direC);
+        if (client == 1) {
+            JOptionPane.showMessageDialog(rootPane, "¡Registro Actualizado!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "¡OCURRIO UN ERROR!");
+        }
+    }
+    private void jButtonactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonactualizarActionPerformed
+       actualizarCliente();
+       obtenerDatos();
+       limpiarCampos();
+    }//GEN-LAST:event_jButtonactualizarActionPerformed
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonactualizar;
+    private javax.swing.JButton jButtoneditar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

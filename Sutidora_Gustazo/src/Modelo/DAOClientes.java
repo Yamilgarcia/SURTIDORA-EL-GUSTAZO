@@ -31,6 +31,21 @@ public class DAOClientes {
     
     }
     
+    public int Actualizar(String cedula,String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
+
+        String transaccion = "UPDATE CLIENTES SET nomb1='"
+                + nomb1 + "', nomb2='"
+                + nomb2 + "', apell1='"
+                + apell1 + "', apell2='"
+                + apell2 + "', numcelu='"
+                + numcelu + "', direc='"
+                + direc + "' WHERE cedula="
+                + cedula;
+
+        return new DataBase().Actualizar(transaccion);
+
+    }
+    
    public List ObtenerDatos(){
         
         String transaccion ="SELECT * FROM CLIENTES";

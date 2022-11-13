@@ -65,6 +65,7 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablecategorias = new javax.swing.JTable();
+        jButtonactualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -107,7 +108,7 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
         jButton2.setBackground(new java.awt.Color(204, 0, 0));
         jButton2.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Cancelar");
+        jButton2.setText("Editar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -131,6 +132,14 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTablecategorias);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 640, 160));
+
+        jButtonactualizar.setText("actualizar");
+        jButtonactualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonactualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));
@@ -172,13 +181,51 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+          int fila = this.jTablecategorias.getSelectedRow();
+        if (fila == -1) {
+
+            JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
+
+        } else {
+
+            try {
+                int idem = Integer.parseInt((String) this.jTablecategorias.getValueAt(fila, 0).toString());
+                String primNomb = (String) this.jTablecategorias.getValueAt(fila, 1);
+            
+
+                jTextidcategoria.setText("" + idem);
+                jTextnomb.setText("" + primNomb);
+                
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButtonactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonactualizarActionPerformed
+        actualizarcategoria();
+        obtenerDatos();
+        limpiarcampos();
+    }//GEN-LAST:event_jButtonactualizarActionPerformed
+     public void actualizarcategoria() {
+        int idcate = Integer.parseInt(this.jTextidcategoria.getText());
+        String Nomb = this.jTextnomb.getText();
+        
+
+        DAOtipocategoria dao = new DAOtipocategoria();
+        int categ = dao.actualizar(idcate, Nomb);
+        if (categ == 1) {
+            JOptionPane.showMessageDialog(rootPane, "¡Registro Actualizado!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "¡OCURRIO UN ERROR!");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonactualizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

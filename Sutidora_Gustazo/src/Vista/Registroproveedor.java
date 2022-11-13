@@ -71,8 +71,6 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jTextnumcelu = new javax.swing.JTextField();
         jTextdirec = new javax.swing.JTextField();
         jTextRuc = new javax.swing.JTextField();
-        jButtonActualizar = new javax.swing.JButton();
-        jButtonEditar = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableproveedores = new javax.swing.JTable();
@@ -126,28 +124,6 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jTextRuc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 210, -1));
 
-        jButtonActualizar.setBackground(new java.awt.Color(0, 153, 153));
-        jButtonActualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonActualizar.setText("Actualizar");
-        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonActualizarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 110, 40));
-
-        jButtonEditar.setBackground(new java.awt.Color(0, 153, 153));
-        jButtonEditar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jButtonEditar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEditar.setText("Editar");
-        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 110, 40));
-
         jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtonGuardar.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +133,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 110, 40));
 
         jTableproveedores.setBackground(new java.awt.Color(204, 204, 204));
         jTableproveedores.setModel(new javax.swing.table.DefaultTableModel(
@@ -218,54 +194,8 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
-    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        int fila = this.jTableproveedores.getSelectedRow();
-        if (fila == -1) {
-            JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
-        } else {
-            try {
-                String rucc = (String) this.jTableproveedores.getValueAt(fila, 0);
-                String nombrr = (String) this.jTableproveedores.getValueAt(fila, 1);
-                String dirrre = (String) this.jTableproveedores.getValueAt(fila, 2);
-                String numcelll = (String) this.jTableproveedores.getValueAt(fila, 3);
-                
-
-                jTextRuc.setText("" + rucc);
-                jTextNomb.setText("" + nombrr);
-                jTextnumcelu.setText("" + numcelll);
-                jTextdirec.setText("" + dirrre);
-
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
-        }
-    }//GEN-LAST:event_jButtonEditarActionPerformed
-
-    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        actualizarProveedores();
-        obtenerDatos();
-        limpiarCampos();
-    }//GEN-LAST:event_jButtonActualizarActionPerformed
-
-    public void actualizarProveedores() {
-        String rucc = this.jTextRuc.getText();
-        String nombrr = this.jTextNomb.getText();
-        String numcelll = this.jTextnumcelu.getText();
-        String dirrre = this.jTextdirec.getText();
-        
-
-        DAOProveedores dao = new DAOProveedores();
-        int prov = dao.Actualizar(rucc, nombrr, numcelll, dirrre);
-        if (prov == 1) {
-            JOptionPane.showMessageDialog(rootPane, "¡Producto Actualizado!");
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "¡Ocurrio un ERROR!");
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

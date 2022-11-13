@@ -22,6 +22,16 @@ public class DAOtipocategoria {
     
     }
     
+    public int actualizar(int ID_categoria,String nomb){
+    
+    String transaccion = "UPDATE TIPOCATEGORIA SET nomb='"
+            +nomb+"'WHERE ID_categoria="
+            +ID_categoria;
+    
+    return new DataBase().Actualizar(transaccion);
+    
+    }
+    
    public List ObtenerDatos(){
         
         String transaccion ="SELECT * FROM TIPOCATEGORIA";
