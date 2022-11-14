@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Modelo/DAOClientes.java</file>
-            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Modelo/DAOEmpleado.java</file>
-            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Vista/Registrocliente.java</file>
-            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Vista/Registroempleado.java</file>
-            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Modelo/Clientes.java</file>
+            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Modelo/Proveedores.java</file>
+            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Controlador/MenuOpciones.java</file>
+            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Modelo/DAOProveedores.java</file>
+            <file>file:/C:/repos/SURTIDORA-EL-GUSTAZO/Sutidora_Gustazo/src/Vista/Registroproveedor.java</file>
         </group>
     </open-files>
 </project-private>

@@ -24,7 +24,7 @@ public class DAOProveedores {
         
         //Llama al metodo actualizar ubicado en la Database.java
         if (new DataBase(). Actualizar(transaccion)>0){
-            return new Proveedores (nomb, numcelu,direc);
+            return new Proveedores (ruc,nomb, numcelu,direc);
         }
         return null;
         

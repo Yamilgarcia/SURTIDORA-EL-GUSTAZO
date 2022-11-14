@@ -74,6 +74,8 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jButtonGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableproveedores = new javax.swing.JTable();
+        jButtoneditar = new javax.swing.JButton();
+        jButtonactualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -151,6 +153,22 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 840, 150));
 
+        jButtoneditar.setText("editar");
+        jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtoneditarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+
+        jButtonactualizar.setText("actualizar");
+        jButtonactualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonactualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
 
@@ -194,9 +212,60 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
+    private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
+        
+        int fila = this.jTableproveedores.getSelectedRow();
+        if (fila == -1) {
+
+            JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
+
+        } else {
+
+            try {
+                String ruC = (String) this.jTableproveedores.getValueAt(fila, 0);
+                String nomB = (String) this.jTableproveedores.getValueAt(fila, 1);
+                String direC = (String) this.jTableproveedores.getValueAt(fila, 2);
+                String Celular = (String) this.jTableproveedores.getValueAt(fila, 3);
+             
+
+                jTextRuc.setText("" + ruC);
+                jTextNomb.setText("" + nomB);
+                jTextdirec.setText("" + direC);
+               jTextnumcelu.setText("" + Celular);
+                
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_jButtoneditarActionPerformed
+
+    private void jButtonactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonactualizarActionPerformed
+        actualizarproveedor();
+        obtenerDatos();
+        limpiarCampos();
+    }//GEN-LAST:event_jButtonactualizarActionPerformed
+
+    public void actualizarproveedor() {
+        String ruC = this.jTextRuc.getText();
+        String nombrE = this.jTextNomb.getText();
+        String Direc = this.jTextdirec.getText();
+        String numCelu = this.jTextnumcelu.getText();
+       
+
+        DAOProveedores dao = new DAOProveedores();
+        int provee = dao.Actualizar(ruC, nombrE, numCelu, Direc);
+        if (provee == 1) {
+            JOptionPane.showMessageDialog(rootPane, "¡Registro Actualizado!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "¡OCURRIO UN ERROR!");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButtonactualizar;
+    private javax.swing.JButton jButtoneditar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
