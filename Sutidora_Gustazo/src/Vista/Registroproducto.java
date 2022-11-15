@@ -315,18 +315,18 @@ public class Registroproducto extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        String nomb = jTextNombre.getText();
+        String nomB = jTextNombre.getText();
         String precioven = jTextPreciovent.getText();
         String Precomp = jTextpreciocom.getText();
         String cant = jTextcanti.getText();
         String fechaven = jTextfechavenci.getText();
-        String categ = jComboBoxCategoria.getSelectedItem().toString();
+        
         String descrip = jTextAreaDescrip.getText();
         String id_categ = jTextIDCategoria.getText();
 
         //Comprueba que las cajas de texto no esten vacias
-        if (nomb.contentEquals("") || precioven.contentEquals("")
-                || Precomp.contentEquals("") || fechaven.contentEquals("") || descrip.contentEquals("")) {
+        if (nomB.contentEquals("") || precioven.contentEquals("")
+                || Precomp.contentEquals("") || fechaven.contentEquals("")) {
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
         } else {
             try {
@@ -337,7 +337,7 @@ public class Registroproducto extends javax.swing.JInternalFrame {
                 Float preco = Float.valueOf(Precomp);
                 Float can = Float.valueOf(cant);
                 int id_cat = Integer.parseInt(id_categ);
-                Productos pr = new DAOProductos().Insertar(nomb, preven, preco, can, fech, descrip, id_cat);
+                Productos pr = new DAOProductos().Insertar(nomB, preven, preco, can, fech, descrip, id_cat);
                 JOptionPane.showMessageDialog(rootPane, "Registro agregado");
 
             } catch (Exception e) {
