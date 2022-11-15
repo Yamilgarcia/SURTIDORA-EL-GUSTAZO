@@ -5,8 +5,6 @@
 package Vista;
 
 import Modelo.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.Date;
@@ -28,21 +26,21 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         jTextIDProducto.setEnabled(false);
 //        jTextIDCategoria.setEnabled(false);
 
-//        llenarcombo();
+        llenarcombo();
     }
 
     public void llenarcombo() {
 
-//        List<Tipocategoria> categorias = new DAOtipocategoria().ObtenerDatos();
-//        for (int i = 0; i < categorias.size(); i++) {
-//
-//            jComboBoxCategoria.addItem(new Tipocategoria(categorias.get(i).getID_categoria(),
-//                    categorias.get(i).getNomb()));
-//        }
-//
-//        int id = jComboBoxCategoria.getItemAt(jComboBoxCategoria.getSelectedIndex()).getID_categoria();
-//
-//        jTextIDCategoria.setText("" + id);
+        List<Tipocategoria> categorias = new DAOtipocategoria().ObtenerDatos();
+        for (int i = 0; i < categorias.size(); i++) {
+
+            jComboBoxCategoria.addItem(new Tipocategoria(categorias.get(i).getID_categoria(), 
+            categorias.get(i).getNomb()));
+        }
+
+        int id = jComboBoxCategoria.getItemAt(jComboBoxCategoria.getSelectedIndex()).getID_categoria();
+
+        jTextIDCategoria.setText("" + id);
     }
 
     public void limpiarcampo() {
@@ -207,7 +205,6 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 110, 40));
 
-        jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxCategoria.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxCategoriaItemStateChanged(evt);
@@ -380,9 +377,9 @@ public class Registroproducto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBoxCategoriaActionPerformed
 
     private void jComboBoxCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaItemStateChanged
-//        int id = jComboBoxCategoria.getItemAt(jComboBoxCategoria.getSelectedIndex()).getID_categoria();
-//
-//        jTextIDCategoria.setText("" + id);
+      int id = jComboBoxCategoria.getItemAt(jComboBoxCategoria.getSelectedIndex()).getID_categoria();
+
+        jTextIDCategoria.setText("" + id);
     }//GEN-LAST:event_jComboBoxCategoriaItemStateChanged
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
@@ -451,7 +448,7 @@ public class Registroproducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JComboBox<String> jComboBoxCategoria;
+    private javax.swing.JComboBox<Tipocategoria> jComboBoxCategoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

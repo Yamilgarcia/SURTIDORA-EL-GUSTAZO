@@ -64,15 +64,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        VerProductosMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        Productos = new javax.swing.JMenu();
+        Proveedores = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,85 +81,46 @@ public class MenuOpciones extends javax.swing.JFrame {
         desktopPane.add(jPanel1);
         jPanel1.setBounds(0, 0, 850, 470);
 
-        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/ventas.png"))); // NOI18N
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Venta");
-        fileMenu.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-
-        openMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Nueva");
-        fileMenu.add(openMenuItem);
-
-        menuBar.add(fileMenu);
-
-        editMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/thefreeforty_register_icon-icons.com_66338 (1).png"))); // NOI18N
-        editMenu.setMnemonic('e');
-        editMenu.setText("Registro");
-        editMenu.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-
-        VerProductosMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        VerProductosMenuItem.setMnemonic('t');
-        VerProductosMenuItem.setText("Productos");
-        VerProductosMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+        Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/ventas.png"))); // NOI18N
+        Productos.setMnemonic('f');
+        Productos.setText("Productos");
+        Productos.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Productos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                VerProductosMenuItemMouseClicked(evt);
+                ProductosMouseClicked(evt);
             }
         });
-        VerProductosMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VerProductosMenuItemActionPerformed(evt);
-            }
-        });
-        editMenu.add(VerProductosMenuItem);
+        menuBar.add(Productos);
 
-        copyMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Proveedores");
-        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                copyMenuItemActionPerformed(evt);
+        Proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/thefreeforty_register_icon-icons.com_66338 (1).png"))); // NOI18N
+        Proveedores.setMnemonic('e');
+        Proveedores.setText("Proveedores");
+        Proveedores.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        Proveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProveedoresMouseClicked(evt);
             }
         });
-        editMenu.add(copyMenuItem);
-
-        pasteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Devolucion");
-        pasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        Proveedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pasteMenuItemActionPerformed(evt);
+                ProveedoresActionPerformed(evt);
             }
         });
-        editMenu.add(pasteMenuItem);
+        menuBar.add(Proveedores);
 
-        deleteMenuItem.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Empleados");
-        deleteMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteMenuItemActionPerformed(evt);
+        jMenu1.setText("jMenu1");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
             }
         });
-        editMenu.add(deleteMenuItem);
+        menuBar.add(jMenu1);
 
-        jMenuItem1.setText("Clientes");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        editMenu.add(jMenuItem1);
+        jMenu2.setText("jMenu2");
+        menuBar.add(jMenu2);
 
-        jMenuItem2.setText("Categorias");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        editMenu.add(jMenuItem2);
-
-        menuBar.add(editMenu);
+        jMenu3.setText("jMenu3");
+        menuBar.add(jMenu3);
 
         setJMenuBar(menuBar);
 
@@ -181,44 +138,22 @@ public class MenuOpciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VerProductosMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerProductosMenuItemMouseClicked
-        //Llamo al metodo obtener datos para mostrarlos en la tabla del formulario
+    private void ProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProveedoresActionPerformed
   
-        
-        
-    }//GEN-LAST:event_VerProductosMenuItemMouseClicked
+    }//GEN-LAST:event_ProveedoresActionPerformed
 
-    private void VerProductosMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerProductosMenuItemActionPerformed
-        producto.ObtenerDatos();
+    private void ProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresMouseClicked
+        
+    }//GEN-LAST:event_ProveedoresMouseClicked
+
+    private void ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductosMouseClicked
+       producto.ObtenerDatos();
         producto.setVisible(true);
-        
-       
-    }//GEN-LAST:event_VerProductosMenuItemActionPerformed
+    }//GEN-LAST:event_ProductosMouseClicked
 
-    private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
-       devolucion.obtenerDatos();
-        devolucion.setVisible(true);
-    }//GEN-LAST:event_pasteMenuItemActionPerformed
-
-    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
-        proveedor.obtenerDatos();
-        proveedor.setVisible(true);
-    }//GEN-LAST:event_copyMenuItemActionPerformed
-
-    private void deleteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMenuItemActionPerformed
-      empleado.obtenerDatos();
-      empleado.setVisible(true);
-    }//GEN-LAST:event_deleteMenuItemActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        cliente.obtenerDatos();
-        cliente.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       categoria.obtenerDatos();
-       categoria.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -256,20 +191,16 @@ public class MenuOpciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem VerProductosMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
+    private javax.swing.JMenu Productos;
+    private javax.swing.JMenu Proveedores;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu editMenu;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-import java.sql.Date;
+//import java.sql.Date;
 
 /**
  *
@@ -38,7 +38,8 @@ public class Tipocategoria {
         this.nomb = nomb;
     }
     
-//    public String toString(){
-//        return ID_categoria + " - " + nomb;
-//    }
+    @Override
+    public String toString(){
+       return ID_categoria + " - " + nomb;
+   }
 }
