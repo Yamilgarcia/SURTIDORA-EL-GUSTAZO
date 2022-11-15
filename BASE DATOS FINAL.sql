@@ -18,11 +18,11 @@ CREATE TABLE PRODUCTOS
  (
     ID_empleado INT PRIMARY KEY IDENTITY NOT NULL,
 	nomb1 VARCHAR (26)NOT NULL,
-	nomb2 VARCHAR (26)NOT NULL,
+	nomb2 VARCHAR (26)NULL,
 	apell1 VARCHAR (26)NOT NULL,
-	apell2 VARCHAR (26)NOT NULL,
+	apell2 VARCHAR (26) NULL,
     numcelu VARCHAR (8)NOT NULL,
-	direc VARCHAR (30)NOT NULL,
+	direc VARCHAR (60)NOT NULL,
   )
 
 
@@ -32,11 +32,11 @@ CREATE TABLE PRODUCTOS
     ID_cliente INT PRIMARY KEY IDENTITY NOT NULL, 
     cedula VARCHAR (14) NOT NULL,
 	nomb1 VARCHAR (26)NOT NULL,
-	nomb2 VARCHAR (26)NOT NULL,
+	nomb2 VARCHAR (26) NULL,
 	apell1 VARCHAR (26)NOT NULL,
-	apell2 VARCHAR (26)NOT NULL,
+	apell2 VARCHAR (26) NULL,
 	numcelu VARCHAR (8) NOT NULL,
-	direc VARCHAR (30) NOT NULL,
+	direc VARCHAR (60) NOT NULL,
  )
 
 
@@ -93,7 +93,7 @@ CREATE TABLE PRODUCTOS
     ruc VARCHAR (16)  NOT NULL,
 	nomb VARCHAR (26) NOT NULL,
 	numcelu VARCHAR (8)NOT NULL,
-	direc VARCHAR (30)NOT NULL,
+	direc VARCHAR (60)NOT NULL,
   )
 
 
@@ -160,9 +160,9 @@ USE BD_ELGUSTAZO
  CREATE TABLE VENTA_PRODUCTO
  (
     nrofactura INT PRIMARY KEY IDENTITY,
-    fecha DATE,
+    precioventa FLOAT,
 	canti FLOAT ,
-	monto FLOAT ,
+	subtotal FLOAT ,
 	tipo_venta bit ,
 	direc VARCHAR (30),
 
@@ -191,9 +191,9 @@ USE BD_ELGUSTAZO
  CREATE TABLE COMPRA_PRODUCTO
  (
     ID_nrofactura1 INT PRIMARY KEY IDENTITY,
-    fecha DATE,
+    preciocom FLOAT,
 	canti FLOAT ,
-	monto FLOAT ,
+	subtotal FLOAT ,
 
   )
 
