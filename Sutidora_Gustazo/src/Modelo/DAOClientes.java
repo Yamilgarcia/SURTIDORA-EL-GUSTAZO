@@ -31,16 +31,17 @@ public class DAOClientes {
     
     }
     
-    public int Actualizar(String cedula,String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
+    public int Actualizar(int ID_cliente,String cedula,String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
 
-        String transaccion = "UPDATE CLIENTES SET nomb1='"
-                + nomb1 + "', nomb2='"
-                + nomb2 + "', apell1='"
-                + apell1 + "', apell2='"
-                + apell2 + "', numcelu='"
-                + numcelu + "', direc='"
-                + direc + "' WHERE cedula="
-                + cedula;
+        String transaccion = "UPDATE CLIENTES SET cedula='"
+                +cedula+"',nomb1='"
+                +nomb1+"',nomb2='"
+                +nomb2+"',apell1='"
+                +apell1+"',apell2='"
+                +apell2+"',numcelu='"
+                +numcelu+"',direc='"
+                +direc+ "' WHERE ID_cliente="
+                + ID_cliente;
 
         return new DataBase().Actualizar(transaccion);
 
@@ -55,10 +56,14 @@ public class DAOClientes {
         List<Clientes> clientes = new ArrayList();
         for (Map registro : registros){
             
-            Clientes cs = new Clientes ((String) registro.get("cedula"),
-                    (String) registro.get("nomb1"),(String) registro.get("nomb2"),
-                    (String) registro.get("apell1"),(String) registro.get("apell2"),
-                    (String) registro.get("numcelu"),(String) registro.get("direc"));
+            Clientes cs = new Clientes ((int) registro.get("ID_cliente"),
+                    (String) registro.get("cedula"),
+                    (String) registro.get("nomb1"),
+                    (String) registro.get("nomb2"),
+                    (String) registro.get("apell1"),
+                    (String) registro.get("apell2"),
+                    (String) registro.get("numcelu"),
+                    (String) registro.get("direc"));
                     
                     
                     clientes.add(cs);

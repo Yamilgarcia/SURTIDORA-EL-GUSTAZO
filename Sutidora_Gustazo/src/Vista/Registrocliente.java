@@ -21,6 +21,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
      */
     public Registrocliente() {
         initComponents();
+        jTextIDcliente.setEnabled(false);
     }
      public void limpiarCampos(){
       jTextcedula.setText("");
@@ -41,12 +42,12 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         
         DefaultTableModel modelo=new DefaultTableModel();
         
-       String[] columnas={"ID","Primer Nombre","Segundo Nombre","Primer Apellido","Segundo Apellido","Teléfono","Dirección"};
+       String[] columnas={"ID","Cedula","Nombre1","Nombre2","Apellido1","Apellido1","Teléfono","Dirección"};
         
         modelo.setColumnIdentifiers(columnas);
         for (Clientes  clien:cliente){
             
-             String[]renglon = {(clien.getCedula()),clien.getNomb1(),clien.getNomb2(),clien.getApell1(),clien.getApell2(),clien.getNumcelu(),clien.getDirec()};
+             String[]renglon = {Integer.toString(clien.getID_cliente()), clien.getCedula(),clien.getNomb1(),clien.getNomb2(),clien.getApell1(),clien.getApell2(),clien.getNumcelu(),clien.getDirec()};
                
                  modelo.addRow(renglon);
 
@@ -84,6 +85,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         jTextnumcelu = new javax.swing.JTextField();
         jTextcedula = new javax.swing.JTextField();
         jButtonactualizar = new javax.swing.JButton();
+        jTextIDcliente = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -165,13 +167,13 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         jTableclientes.setBackground(new java.awt.Color(204, 204, 204));
         jTableclientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
             }
         ));
         jScrollPane3.setViewportView(jTableclientes);
@@ -204,6 +206,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
+        jPanel1.add(jTextIDcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 140, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 480));
@@ -228,17 +231,18 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         String nomb2= jTextnomb2.getText();
         String  apell1=jTextapell1.getText();
         String  apell2=jTextapell2.getText();
-        String  direc= jTextdirec.getText();
+        String  direC= jTextdirec.getText();
         String  numcelu= jTextnumcelu.getText();
 
         if(nomb1.contentEquals("")||nomb2.contentEquals("")||
-            direc.contentEquals("")||numcelu.contentEquals("")||
+            direC.contentEquals("")||numcelu.contentEquals("")||
             apell1.contentEquals("")||apell2.contentEquals("")){
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
         }else{
             try{
 
-                Clientes cl =new DAOClientes().Insertar(cedula, nomb1, nomb2, apell1, apell2, numcelu, direc);
+                Clientes cl =new DAOClientes().Insertar(cedula, nomb1, nomb2, apell1, apell2, numcelu, direC);
+                        
                 JOptionPane.showMessageDialog(rootPane, "Registro agregado");
 
             }catch (Exception e){
@@ -269,15 +273,16 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         } else {
 
             try {
-                String cedula= (String) this.jTableclientes.getValueAt(fila, 0);
-                String primNomb = (String) this.jTableclientes.getValueAt(fila, 1);
-                String seguNomb = (String) this.jTableclientes.getValueAt(fila, 2);
-                String primApell = (String) this.jTableclientes.getValueAt(fila, 3);
-                String seguApell = (String) this.jTableclientes.getValueAt(fila, 4);
-                String nuCel = (String) this.jTableclientes.getValueAt(fila, 5);
-                String direci = (String) this.jTableclientes.getValueAt(fila, 6);
+                int idclien = Integer.parseInt((String) this.jTableclientes.getValueAt(fila, 0).toString());
+                String cedula= (String) this.jTableclientes.getValueAt(fila, 1);
+                String primNomb = (String) this.jTableclientes.getValueAt(fila, 2);
+                String seguNomb = (String) this.jTableclientes.getValueAt(fila, 3);
+                String primApell = (String) this.jTableclientes.getValueAt(fila, 4);
+                String seguApell = (String) this.jTableclientes.getValueAt(fila, 5);
+                String nuCel = (String) this.jTableclientes.getValueAt(fila, 6);
+                String direci = (String) this.jTableclientes.getValueAt(fila, 7);
                 
-
+                jTextIDcliente.setText(""+ idclien);
                 jTextcedula.setText("" + cedula);
                 jTextnomb1.setText("" + primNomb);
                 jTextnomb2.setText("" + seguNomb);
@@ -290,11 +295,12 @@ public class Registrocliente extends javax.swing.JInternalFrame {
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
-             jTextcedula.setEnabled(false);
+             
         }
 
     }//GEN-LAST:event_jButtoneditarActionPerformed
         public void actualizarCliente() {
+        int idclien = Integer.parseInt(this.jTextIDcliente.getText());       
         String cedulA= this.jTextcedula.getText();
         String nomB1 = this.jTextnomb1.getText();
         String nomB2 = this.jTextnomb2.getText();
@@ -306,7 +312,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         
 
         DAOClientes dao = new DAOClientes();
-        int client = dao.Actualizar(cedulA, nomB1, nomB2, Apell1, Apell2, numcelU, direC);
+        int client = dao.Actualizar(idclien, cedulA, nomB1, nomB2, Apell1, Apell2, numcelU, direC);
         if (client == 1) {
             JOptionPane.showMessageDialog(rootPane, "¡Registro Actualizado!");
         } else {
@@ -337,6 +343,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTableclientes;
+    private javax.swing.JTextField jTextIDcliente;
     private javax.swing.JTextField jTextapell1;
     private javax.swing.JTextField jTextapell2;
     private javax.swing.JTextField jTextcedula;

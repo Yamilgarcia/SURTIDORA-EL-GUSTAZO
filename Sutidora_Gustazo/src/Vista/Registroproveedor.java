@@ -20,7 +20,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
      */
     public Registroproveedor() {
         initComponents();
-
+       jTextIDprovee.setEnabled(false);
     }
 
     public void limpiarCampos() {
@@ -38,12 +38,12 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
 
         DefaultTableModel modelo = new DefaultTableModel();
 
-        String[] columnas = {"RUC", "Nombre", "Dirección", "Teléfono"};
+        String[] columnas = {"ID","RUC", "Nombre", "Dirección", "Teléfono"};
 
         modelo.setColumnIdentifiers(columnas);
         for (Proveedores provedo : proved) {
 
-            String[] renglon = {provedo.getRuc(), provedo.getNomb(), provedo.getDirec(), provedo.getNumcelu()};
+            String[] renglon = {Integer.toString(provedo.getID_proveedor()),provedo.getRuc(), provedo.getNomb(), provedo.getDirec(), provedo.getNumcelu()};
             modelo.addRow(renglon);
 
         }
@@ -76,6 +76,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jTableproveedores = new javax.swing.JTable();
         jButtoneditar = new javax.swing.JButton();
         jButtonactualizar = new javax.swing.JButton();
+        jTextIDprovee = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -168,6 +169,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+        jPanel1.add(jTextIDprovee, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 160, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
@@ -222,12 +224,13 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         } else {
 
             try {
-                String ruC = (String) this.jTableproveedores.getValueAt(fila, 0);
-                String nomB = (String) this.jTableproveedores.getValueAt(fila, 1);
-                String direC = (String) this.jTableproveedores.getValueAt(fila, 2);
-                String Celular = (String) this.jTableproveedores.getValueAt(fila, 3);
+                int idprovee = Integer.parseInt((String) this.jTableproveedores.getValueAt(fila, 0).toString());
+                String ruC = (String) this.jTableproveedores.getValueAt(fila, 1);
+                String nomB = (String) this.jTableproveedores.getValueAt(fila, 2);
+                String direC = (String) this.jTableproveedores.getValueAt(fila, 3);
+                String Celular = (String) this.jTableproveedores.getValueAt(fila, 4);
              
-
+                jTextIDprovee.setText(""+ idprovee);
                 jTextRuc.setText("" + ruC);
                 jTextNomb.setText("" + nomB);
                 jTextdirec.setText("" + direC);
@@ -247,6 +250,8 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonactualizarActionPerformed
 
     public void actualizarproveedor() {
+                   
+        int idprovee = Integer.parseInt(this.jTextIDprovee.getText());
         String ruC = this.jTextRuc.getText();
         String nombrE = this.jTextNomb.getText();
         String Direc = this.jTextdirec.getText();
@@ -254,7 +259,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
        
 
         DAOProveedores dao = new DAOProveedores();
-        int provee = dao.Actualizar(ruC, nombrE, numCelu, Direc);
+        int provee = dao.Actualizar(idprovee, ruC, nombrE, numCelu, Direc);
         if (provee == 1) {
             JOptionPane.showMessageDialog(rootPane, "¡Registro Actualizado!");
         } else {
@@ -275,6 +280,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableproveedores;
+    private javax.swing.JTextField jTextIDprovee;
     private javax.swing.JTextField jTextNomb;
     private javax.swing.JTextField jTextRuc;
     private javax.swing.JTextField jTextdirec;

@@ -9,10 +9,19 @@ import java.sql.Date;
  * @author PC
  */
 public class Proveedores {
+    private int ID_proveedor;
     private String ruc;
     private String nomb;
     private String numcelu;
     private String direc;
+
+    public Proveedores(int ID_proveedor, String ruc, String nomb, String numcelu, String direc) {
+        this.ID_proveedor = ID_proveedor;
+        this.ruc = ruc;
+        this.nomb = nomb;
+        this.numcelu = numcelu;
+        this.direc = direc;
+    }
 
     public Proveedores(String ruc, String nomb, String numcelu, String direc) {
         this.ruc = ruc;
@@ -21,10 +30,12 @@ public class Proveedores {
         this.direc = direc;
     }
 
-    public Proveedores(String nomb, String numcelu, String direc) {
-        this.nomb = nomb;
-        this.numcelu = numcelu;
-        this.direc = direc;
+    public int getID_proveedor() {
+        return ID_proveedor;
+    }
+
+    public void setID_proveedor(int ID_proveedor) {
+        this.ID_proveedor = ID_proveedor;
     }
 
     public String getRuc() {
@@ -59,9 +70,7 @@ public class Proveedores {
         this.direc = direc;
     }
 
-    public int getRUC_Proveedores() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
     
     
 }

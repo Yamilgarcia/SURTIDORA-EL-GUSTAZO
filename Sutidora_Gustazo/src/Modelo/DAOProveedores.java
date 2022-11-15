@@ -31,13 +31,14 @@ public class DAOProveedores {
         
     }
     //Metodo para actualizar un registro de la BD
-    public int Actualizar(String ruc, String nomb, String numcelu, String direc){
+    public int Actualizar(int ID_proveedor,String ruc, String nomb, String numcelu, String direc){
         
-        String transaccion = "UPDATE PROVEEDORES SET nomb='"
-                +nomb+ "',numcelu='"
+        String transaccion = "UPDATE PROVEEDORES SET ruc='"
+                +ruc+ "',nomb='"
+                +nomb+"',numcelu='"
                 +numcelu+"',direc='"
-                +direc+"' WHERE ruc="
-                +ruc;
+                +direc+"' WHERE ID_proveedor="
+                +ID_proveedor;
         
         return new DataBase().Actualizar(transaccion);
     }
@@ -52,7 +53,8 @@ public class DAOProveedores {
         //ciclo que recorre cada registro y los agrega al arreglo proveedores
         for (Map registro : registros){
             
-            Proveedores prov = new Proveedores ((String)registro.get("ruc"),
+            Proveedores prov = new Proveedores ((int)registro.get("ID_proveedor"),
+                    (String)registro.get("ruc"),
                     (String) registro.get("nomb"),
                     (String) registro.get("numcelu"),
                     (String) registro.get("direc"));
@@ -65,14 +67,7 @@ public class DAOProveedores {
         
         return proveedores;//retorna todos los empelados ubicados  en la tabla de la BD
     }
-    //Metodo para eliminar un registro de la tabla en la BD
-    public int Eliminar(String ruc){
-        
-        String transaccion = "DELETE FROM PROVEEDORES WHERE ruc='"+ruc+"'";
-        
-        return new DataBase().Actualizar(transaccion);
-        
-    }
+
 
     
     

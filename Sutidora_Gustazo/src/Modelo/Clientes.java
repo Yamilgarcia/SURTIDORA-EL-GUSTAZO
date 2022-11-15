@@ -9,6 +9,7 @@ import java.sql.Date;
  * @author PC
  */
 public class Clientes {
+    private int ID_cliente;
     private String cedula;
     private String nomb1;
     private String nomb2;
@@ -16,6 +17,17 @@ public class Clientes {
     private String apell2;
     private String numcelu;
     private String direc;
+
+    public Clientes(int ID_cliente, String cedula, String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
+        this.ID_cliente = ID_cliente;
+        this.cedula = cedula;
+        this.nomb1 = nomb1;
+        this.nomb2 = nomb2;
+        this.apell1 = apell1;
+        this.apell2 = apell2;
+        this.numcelu = numcelu;
+        this.direc = direc;
+    }
 
     public Clientes(String cedula, String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
         this.cedula = cedula;
@@ -27,13 +39,12 @@ public class Clientes {
         this.direc = direc;
     }
 
-    public Clientes(String nomb1, String nomb2, String apell1, String apell2, String numcelu, String direc) {
-        this.nomb1 = nomb1;
-        this.nomb2 = nomb2;
-        this.apell1 = apell1;
-        this.apell2 = apell2;
-        this.numcelu = numcelu;
-        this.direc = direc;
+    public int getID_cliente() {
+        return ID_cliente;
+    }
+
+    public void setID_cliente(int ID_cliente) {
+        this.ID_cliente = ID_cliente;
     }
 
     public String getCedula() {
@@ -91,5 +102,7 @@ public class Clientes {
     public void setDirec(String direc) {
         this.direc = direc;
     }
+
+   
     
 }
