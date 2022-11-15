@@ -3,58 +3,55 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
  */
 package Controlador;
+
 import Vista.*;
+
 /**
  *
  * @author Cris
  */
 public class MenuOpciones extends javax.swing.JFrame {
-    
-    private  Registroproducto producto;//objeto formulario productos
+
+    private Registroproducto producto;//objeto formulario productos
     private Registrodevoluciones devolucion;
     private Registroproveedor proveedor;
     private Registroempleado empleado;
     private Registrocliente cliente;
     private Registrocategoria categoria;
 
-    
     public MenuOpciones() {
         initComponents();
-        this.setLocation(425,200);
-        
+        this.setLocation(425, 200);
+
         setTitle("Menu Opciones Surtidora EL Gustazo ");//Agrego el titulo al MDI
-        producto= new Registroproducto();
-        
+        producto = new Registroproducto();
+
         //Agrego los Jinternarframe al desktopPane del MDI
         desktopPane.add(producto);
-        
-         
-        devolucion= new Registrodevoluciones();
-        
+
+        devolucion = new Registrodevoluciones();
+
         //Agrego los Jinternarframe al desktopPane del MDI
         desktopPane.add(devolucion);
-        
-        
-        proveedor= new Registroproveedor();
-        
+
+        proveedor = new Registroproveedor();
+
         //Agrego los Jinternarframe al desktopPane del MDI
         desktopPane.add(proveedor);
-        
-        empleado= new Registroempleado();
-        
+
+        empleado = new Registroempleado();
+
         desktopPane.add(empleado);
-        
+
         cliente = new Registrocliente();
-        
+
         desktopPane.add(cliente);
-        
-        
+
         categoria = new Registrocategoria();
-        
+
         desktopPane.add(categoria);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -182,21 +179,20 @@ public class MenuOpciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VerProductosMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerProductosMenuItemMouseClicked
-        //Llamo al metodo obtener datos para mostrarlos en la tabla del formulario
-  
-        
-        
+       
+
+
     }//GEN-LAST:event_VerProductosMenuItemMouseClicked
 
     private void VerProductosMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerProductosMenuItemActionPerformed
         producto.ObtenerDatos();
         producto.setVisible(true);
-        
-       
+
+
     }//GEN-LAST:event_VerProductosMenuItemActionPerformed
 
     private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
-       devolucion.obtenerDatos();
+        devolucion.obtenerDatos();
         devolucion.setVisible(true);
     }//GEN-LAST:event_pasteMenuItemActionPerformed
 
@@ -206,8 +202,8 @@ public class MenuOpciones extends javax.swing.JFrame {
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
     private void deleteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMenuItemActionPerformed
-      empleado.obtenerDatos();
-      empleado.setVisible(true);
+        empleado.obtenerDatos();
+        empleado.setVisible(true);
     }//GEN-LAST:event_deleteMenuItemActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -216,8 +212,8 @@ public class MenuOpciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       categoria.obtenerDatos();
-       categoria.setVisible(true);
+        categoria.obtenerDatos();
+        categoria.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**

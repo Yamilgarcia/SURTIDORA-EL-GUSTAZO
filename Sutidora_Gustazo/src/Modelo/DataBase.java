@@ -3,16 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
+
 import java.sql.*;
 import java.util.*;
+
 /**
  *
  * @author PC
  */
 public class DataBase {
-    
+
     //Cadena de conexión de la BD
-    private final String URL = "jdbc:sqlserver://localhost:1433;databaseName= BD_ELGUSTAZO;"
+    private final String URL = "jdbc:sqlserver://localhost:51745;databaseName= BD_ELGUSTAZO;"
             + "integratedSecurity = true;" + " encrypt= true;trustServerCertificate= true;";
 
     private Connection conexion;//para la conexion con la BD
@@ -42,61 +44,60 @@ public class DataBase {
         return 0;
 
     }
-    
-    private List OrganizarDatos(ResultSet rs){
-        List filas= new ArrayList();//Arreglo elementos
-        
-        try{
-            int numColumnas=rs.getMetaData().getColumnCount();
-            while(rs.next()){//recorre cada registro de la tabla
+
+    private List OrganizarDatos(ResultSet rs) {
+        List filas = new ArrayList();//Arreglo elementos
+
+        try {
+            int numColumnas = rs.getMetaData().getColumnCount();
+            while (rs.next()) {//recorre cada registro de la tabla
                 Map<String, Object> renglon = new HashMap();
-                for(int i=1; i<=numColumnas; i++){
+                for (int i = 1; i <= numColumnas; i++) {
                     //Se obtiene el nombre de campo en la BD
-                    String nombreCampo=rs.getMetaData().getColumnName(i);
-                    Object valor=rs.getObject(nombreCampo);
+                    String nombreCampo = rs.getMetaData().getColumnName(i);
+                    Object valor = rs.getObject(nombreCampo);
                     //por cada campo, se obtiene el numero y el valor del mismo
                     renglon.put(nombreCampo, valor);
                 }
                 filas.add(renglon);//se agrega al arreglo cada registro
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return filas;
-            
+
     }
-    
-    public List Listar(String consulta){
-        ResultSet rs= null;
+
+    public List Listar(String consulta) {
+        ResultSet rs = null;
         List resultado = new ArrayList();
-        try{
-            Statement st=conexion.createStatement();
-            rs=st.executeQuery(consulta);
+        try {
+            Statement st = conexion.createStatement();
+            rs = st.executeQuery(consulta);
             resultado = OrganizarDatos(rs);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println("No se realizo la consulta");
             e.printStackTrace();
         }
         return resultado;
     }
-    
-    public boolean ejecutarProcedimiento(String nombre){
-        try{
-            CallableStatement cs = conexion.prepareCall("{Call"+nombre+"}");
+
+    public boolean ejecutarProcedimiento(String nombre) {
+        try {
+            CallableStatement cs = conexion.prepareCall("{Call" + nombre + "}");
             return cs.execute();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
-    
-    public void cerrarConexion(){
-        try{
+
+    public void cerrarConexion() {
+        try {
             conexion.close();
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    
-    
+
 }

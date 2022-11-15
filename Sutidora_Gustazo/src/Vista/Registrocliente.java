@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vista;
+
 import Modelo.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +11,7 @@ import java.util.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.Date;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cris
@@ -22,43 +24,39 @@ public class Registrocliente extends javax.swing.JInternalFrame {
     public Registrocliente() {
         initComponents();
     }
-     public void limpiarCampos(){
-      jTextcedula.setText("");
-      jTextnomb1.setText("");
-      jTextnomb2.setText("");
-      jTextapell1.setText("");
-      jTextapell2.setText("");
-      jTextdirec.setText("");
-      jTextnumcelu.setText("");
 
-        
-        
-      }
+    public void limpiarCampos() {
+        jTextcedula.setText("");
+        jTextnomb1.setText("");
+        jTextnomb2.setText("");
+        jTextapell1.setText("");
+        jTextapell2.setText("");
+        jTextdirec.setText("");
+        jTextnumcelu.setText("");
 
-     public void obtenerDatos(){
-        
-        List<Clientes> cliente=new DAOClientes().ObtenerDatos();
-        
-        DefaultTableModel modelo=new DefaultTableModel();
-        
-       String[] columnas={"ID","Primer Nombre","Segundo Nombre","Primer Apellido","Segundo Apellido","Teléfono","Dirección"};
-        
+    }
+
+    public void obtenerDatos() {
+
+        List<Clientes> cliente = new DAOClientes().ObtenerDatos();
+
+        DefaultTableModel modelo = new DefaultTableModel();
+
+        String[] columnas = {"ID", "Primer Nombre", "Segundo Nombre", "Primer Apellido", "Segundo Apellido", "Teléfono", "Dirección"};
+
         modelo.setColumnIdentifiers(columnas);
-        for (Clientes  clien:cliente){
-            
-             String[]renglon = {(clien.getCedula()),clien.getNomb1(),clien.getNomb2(),clien.getApell1(),clien.getApell2(),clien.getNumcelu(),clien.getDirec()};
-               
-                 modelo.addRow(renglon);
+        for (Clientes clien : cliente) {
 
-             }
-                 
-             
+            String[] renglon = {(clien.getCedula()), clien.getNomb1(), clien.getNomb2(), clien.getApell1(), clien.getApell2(), clien.getNumcelu(), clien.getDirec()};
+
+            modelo.addRow(renglon);
+
+        }
+
         jTableclientes.setModel(modelo);
-       
 
-     }
-     
-     
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -141,7 +139,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 0));
-        jButton1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -149,18 +147,18 @@ public class Registrocliente extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, -1, 40));
 
-        jButtoneditar.setBackground(new java.awt.Color(255, 0, 0));
-        jButtoneditar.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jButtoneditar.setBackground(new java.awt.Color(0, 153, 153));
+        jButtoneditar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButtoneditar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtoneditar.setText("editar");
+        jButtoneditar.setText("Editar");
         jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtoneditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, -1, 40));
+        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 110, 40));
 
         jTableclientes.setBackground(new java.awt.Color(204, 204, 204));
         jTableclientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -197,13 +195,16 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jTextcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 30));
 
+        jButtonactualizar.setBackground(new java.awt.Color(0, 153, 153));
+        jButtonactualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonactualizar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonactualizar.setText("Actualizar");
         jButtonactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonactualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
+        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 400, -1, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 480));
@@ -225,23 +226,23 @@ public class Registrocliente extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String cedula = jTextcedula.getText();
         String nomb1 = jTextnomb1.getText();
-        String nomb2= jTextnomb2.getText();
-        String  apell1=jTextapell1.getText();
-        String  apell2=jTextapell2.getText();
-        String  direc= jTextdirec.getText();
-        String  numcelu= jTextnumcelu.getText();
+        String nomb2 = jTextnomb2.getText();
+        String apell1 = jTextapell1.getText();
+        String apell2 = jTextapell2.getText();
+        String direc = jTextdirec.getText();
+        String numcelu = jTextnumcelu.getText();
 
-        if(nomb1.contentEquals("")||nomb2.contentEquals("")||
-            direc.contentEquals("")||numcelu.contentEquals("")||
-            apell1.contentEquals("")||apell2.contentEquals("")){
+        if (nomb1.contentEquals("") || nomb2.contentEquals("")
+                || direc.contentEquals("") || numcelu.contentEquals("")
+                || apell1.contentEquals("") || apell2.contentEquals("")) {
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
-        }else{
-            try{
+        } else {
+            try {
 
-                Clientes cl =new DAOClientes().Insertar(cedula, nomb1, nomb2, apell1, apell2, numcelu, direc);
+                Clientes cl = new DAOClientes().Insertar(cedula, nomb1, nomb2, apell1, apell2, numcelu, direc);
                 JOptionPane.showMessageDialog(rootPane, "Registro agregado");
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(rootPane, "No se agrego el registro");
             }
@@ -261,7 +262,7 @@ public class Registrocliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextcedulaActionPerformed
 
     private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
-              int fila = this.jTableclientes.getSelectedRow();
+        int fila = this.jTableclientes.getSelectedRow();
         if (fila == -1) {
 
             JOptionPane.showMessageDialog(rootPane, "Selecione un registro de la tabla primero");
@@ -269,14 +270,13 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         } else {
 
             try {
-                String cedula= (String) this.jTableclientes.getValueAt(fila, 0);
+                String cedula = (String) this.jTableclientes.getValueAt(fila, 0);
                 String primNomb = (String) this.jTableclientes.getValueAt(fila, 1);
                 String seguNomb = (String) this.jTableclientes.getValueAt(fila, 2);
                 String primApell = (String) this.jTableclientes.getValueAt(fila, 3);
                 String seguApell = (String) this.jTableclientes.getValueAt(fila, 4);
                 String nuCel = (String) this.jTableclientes.getValueAt(fila, 5);
                 String direci = (String) this.jTableclientes.getValueAt(fila, 6);
-                
 
                 jTextcedula.setText("" + cedula);
                 jTextnomb1.setText("" + primNomb);
@@ -285,25 +285,22 @@ public class Registrocliente extends javax.swing.JInternalFrame {
                 jTextapell2.setText("" + seguApell);
                 jTextnumcelu.setText("" + nuCel);
                 jTextdirec.setText("" + direci);
-                
 
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
-             jTextcedula.setEnabled(false);
+
         }
 
     }//GEN-LAST:event_jButtoneditarActionPerformed
-        public void actualizarCliente() {
-        String cedulA= this.jTextcedula.getText();
+    public void actualizarCliente() {
+        String cedulA = this.jTextcedula.getText();
         String nomB1 = this.jTextnomb1.getText();
         String nomB2 = this.jTextnomb2.getText();
         String Apell1 = this.jTextapell1.getText();
         String Apell2 = this.jTextapell2.getText();
         String numcelU = this.jTextnumcelu.getText();
         String direC = this.jTextdirec.getText();
-        
-        
 
         DAOClientes dao = new DAOClientes();
         int client = dao.Actualizar(cedulA, nomB1, nomB2, Apell1, Apell2, numcelU, direC);
@@ -314,11 +311,10 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         }
     }
     private void jButtonactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonactualizarActionPerformed
-       actualizarCliente();
-       obtenerDatos();
-       limpiarCampos();
+        actualizarCliente();
+        obtenerDatos();
+        limpiarCampos();
     }//GEN-LAST:event_jButtonactualizarActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

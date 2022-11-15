@@ -23,7 +23,6 @@ public class Registroproducto extends javax.swing.JInternalFrame {
      */
     public Registroproducto() {
         initComponents();
-        
 
         jTextIDProducto.setEnabled(false);
 //        jTextIDCategoria.setEnabled(false);
@@ -104,7 +103,7 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         jButtonGuardar = new javax.swing.JButton();
         jComboBoxCategoria = new javax.swing.JComboBox<>();
         jButtonEditar = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
         jButtonActualizar = new javax.swing.JButton();
         jTextIDProducto = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -231,16 +230,16 @@ public class Registroproducto extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 110, 40));
 
-        jButtonCancelar.setBackground(new java.awt.Color(204, 0, 0));
-        jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCancelar.setText("Cancelar");
-        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEliminar.setBackground(new java.awt.Color(204, 0, 0));
+        jButtonEliminar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEliminar.setText("Eliminar");
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelarActionPerformed(evt);
+                jButtonEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 110, 40));
+        jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 110, 40));
 
         jButtonActualizar.setBackground(new java.awt.Color(0, 153, 153));
         jButtonActualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -357,12 +356,20 @@ public class Registroproducto extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jButtonGuardarMouseClicked
 
-    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelarActionPerformed
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
+        int fila = this.jTablaProdu.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(rootPane, "Seleccione un registro de la tabla primero");
+        } else {
+            int id = Integer.parseInt((String) this.jTablaProdu.getValueAt(fila, 0).toString());
+            DAOProductos dao = new DAOProductos();
+            dao.Eliminar(id);
+            ObtenerDatos();
+        }
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jTextIDProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIDProductoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextIDProductoActionPerformed
 
     private void jComboBoxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaActionPerformed
@@ -390,8 +397,6 @@ public class Registroproducto extends javax.swing.JInternalFrame {
                 int idcate = Integer.parseInt((String) this.jTablaProdu.getValueAt(fila, 5).toString());
                 String descrr = (String) this.jTablaProdu.getValueAt(fila, 6);
                 Date fecven = Date.valueOf((String) this.jTablaProdu.getValueAt(fila, 7).toString());
-                
-                
 
                 jTextIDProducto.setText("" + idpr);
                 jTextNombre.setText("" + nom);
@@ -401,8 +406,6 @@ public class Registroproducto extends javax.swing.JInternalFrame {
                 jTextIDCategoria.setText("" + idcate);
                 jTextAreaDescrip.setText("" + descrr);
                 jTextfechavenci.setText(String.valueOf(fecven));
-                
-                
 
             } catch (NumberFormatException e) {
                 e.printStackTrace();
@@ -439,8 +442,8 @@ public class Registroproducto extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonEditar;
+    private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JComboBox<String> jComboBoxCategoria;
     private javax.swing.JLabel jLabel1;

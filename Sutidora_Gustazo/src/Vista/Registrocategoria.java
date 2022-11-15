@@ -95,7 +95,7 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
         jPanel1.add(jTextnomb, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 150, 30));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -105,8 +105,8 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(204, 0, 0));
-        jButton2.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
+        jButton2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Editar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 110, -1));
 
         jTablecategorias.setBackground(new java.awt.Color(153, 153, 153));
         jTablecategorias.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,13 +133,16 @@ public class Registrocategoria extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 640, 160));
 
-        jButtonactualizar.setText("actualizar");
+        jButtonactualizar.setBackground(new java.awt.Color(0, 153, 153));
+        jButtonactualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jButtonactualizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonactualizar.setText("Actualizar");
         jButtonactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonactualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));

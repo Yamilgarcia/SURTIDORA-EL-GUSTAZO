@@ -7,7 +7,6 @@ package Modelo;
 import java.sql.Date;
 import java.util.*;
 
-
 /**
  *
  * @author Usuario
@@ -33,28 +32,26 @@ public class DAOProductos {
         return null;
 
     }
-    
+
     public int Actualizar(int ID_producto, String nomb, float preciovent,
-            float preciocom, float canti, java.sql.Date fechavenci, String descrip, int ID_categoria){
-        
-        
+            float preciocom, float canti, java.sql.Date fechavenci, String descrip, int ID_categoria) {
+
         String transaccion = "UPDATE PRODUCTOS SET  nomb ='"
-                +nomb+ "', preciovent='"
-                +preciovent+ "', preciocom='"
-                +preciocom+ "', canti='"
-                +canti+ "', fechavenci='"
-                +fechavenci+ "', descrip='"
-                +descrip+ "', ID_categoria='"
-                +ID_categoria+ "' WHERE id_producto= "
-                +ID_producto;
+                + nomb + "', preciovent='"
+                + preciovent + "', preciocom='"
+                + preciocom + "', canti='"
+                + canti + "', fechavenci='"
+                + fechavenci + "', descrip='"
+                + descrip + "', ID_categoria='"
+                + ID_categoria + "' WHERE id_producto= "
+                + ID_producto;
         return new DataBase().Actualizar(transaccion);
     }
-    
 
     //Metodo para actualizar un registro de la BD
     //Metodo para seleccionar todos los registros de la tabla
     public List ObtenerDatos() {
-        
+
         String transaccion = "SELECT *FROM PRODUCTOS";
         //Llama al metodo listar de la DataBase.java
 
@@ -78,12 +75,6 @@ public class DAOProductos {
 
         return productos;//retorna todos los productos ubicados  en la tabla de la BD
     }
-
-    
-    
-    
-    
-
 
     //Metodo para eliminar un registro de la tabla en la BD
     public int Eliminar(int id) {
