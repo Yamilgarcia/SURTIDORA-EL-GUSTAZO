@@ -73,24 +73,24 @@ public class DAOEmpleado {
 
         return empleados;//retorna todos los empelados ubicados  en la tabla de la BD
     }
-
-    public List ObtenerDatosTurnos() {
-        String transaccion = "SELECT * FROM TURNOS";
-        List<Map> registros = new DataBase().Listar(transaccion);
-        List<Turnos> turno = new ArrayList();
-
-        for (Map registro : registros) {
-
-            Turnos turn = new Turnos((int) registro.get("ID_turnos"),
-                    (String) registro.get("nomb"), (java.sql.Time.valueOf(registro.get("hrainicio").toString())),
-                    (java.sql.Time.valueOf(registro.get("hrafinali").toString())));
-
-            turno.add(turn);
-        }
-
-        return turno;
-
-    }
+//////
+//////    public List ObtenerDatosTurnos() {
+//////        String transaccion = "SELECT * FROM TURNOS";
+//////        List<Map> registros = new DataBase().Listar(transaccion);
+//////        List<Turnos> turno = new ArrayList();
+//////
+//////        for (Map registro : registros) {
+//////
+//////            Turnos turn = new Turnos((int) registro.get("ID_turnos"),
+//////                    (String) registro.get("nomb"), (java.sql.Time.valueOf(registro.get("hrainicio").toString())),
+//////                    (java.sql.Time.valueOf(registro.get("hrafinali").toString())));
+//////
+//////            turno.add(turn);
+//////        }
+//////
+//////        return turno;
+//////
+//////    }
 
     //Metodo para eliminar un registro de la tabla en la BD
     public int Eliminar(int id) {

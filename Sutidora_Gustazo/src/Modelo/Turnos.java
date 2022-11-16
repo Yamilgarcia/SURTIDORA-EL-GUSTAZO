@@ -3,20 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-import java.sql.*;
+
+import java.sql.Time;
+
 /**
  *
  * @author PC
  */
 public class Turnos {
     
-     private int ID_turno;
+     private int ID_turnos;
     private String nomb;
     private Time hrainicio;
     private Time hrafinali;
 
-    public Turnos(int ID_turno, String nomb, Time hrainicio, Time hrafinali) {
-        this.ID_turno = ID_turno;
+    public Turnos(int ID_turnos, String nomb, Time hrainicio, Time hrafinali) {
+        this.ID_turnos = ID_turnos;
         this.nomb = nomb;
         this.hrainicio = hrainicio;
         this.hrafinali = hrafinali;
@@ -28,12 +30,12 @@ public class Turnos {
         this.hrafinali = hrafinali;
     }
 
-    public int getID_turno() {
-        return ID_turno;
+    public int getID_turnos() {
+        return ID_turnos;
     }
 
-    public void setID_turno(int ID_turno) {
-        this.ID_turno = ID_turno;
+    public void setID_turnos(int ID_turnos) {
+        this.ID_turnos = ID_turnos;
     }
 
     public String getNomb() {
@@ -59,6 +61,9 @@ public class Turnos {
     public void setHrafinali(Time hrafinali) {
         this.hrafinali = hrafinali;
     }
-    
+        @Override
+    public String toString(){
+       return ID_turnos + " - " + nomb;
+   }
     
 }

@@ -4,6 +4,9 @@
  */
 package Controlador;
 import Vista.*;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Cris
@@ -20,7 +23,9 @@ public class MenuOpciones extends javax.swing.JFrame {
     
     public MenuOpciones() {
         initComponents();
-        this.setLocation(425,200);
+        this.setLocation(640, 632);
+       this.setLocationRelativeTo(null);
+//        this.setResizable(false);
         
         setTitle("Menu Opciones Surtidora EL Gustazo ");//Agrego el titulo al MDI
         producto= new Registroproducto();
@@ -59,101 +64,191 @@ public class MenuOpciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        menuBar = new javax.swing.JMenuBar();
-        Productos = new javax.swing.JMenu();
-        Proveedores = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
+        jButton2 = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
+        jButton3 = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JToolBar.Separator();
+        jSeparator10 = new javax.swing.JToolBar.Separator();
+        jSeparator11 = new javax.swing.JToolBar.Separator();
+        jButton4 = new javax.swing.JButton();
+        jSeparator12 = new javax.swing.JToolBar.Separator();
+        jSeparator13 = new javax.swing.JToolBar.Separator();
+        jSeparator14 = new javax.swing.JToolBar.Separator();
+        jButton5 = new javax.swing.JButton();
+        jSeparator15 = new javax.swing.JToolBar.Separator();
+        jSeparator16 = new javax.swing.JToolBar.Separator();
+        jSeparator17 = new javax.swing.JToolBar.Separator();
+        jButton6 = new javax.swing.JButton();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/Fondo.png"));
+        Image image = icon.getImage();
+        desktopPane = new javax.swing.JDesktopPane(){
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, 10));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setExtendedState(MenuOpciones.MAXIMIZED_BOTH);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
+        jToolBar1.setRollover(true);
 
-        desktopPane.add(jPanel1);
-        jPanel1.setBounds(0, 0, 850, 470);
-
-        Productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/ventas.png"))); // NOI18N
-        Productos.setMnemonic('f');
-        Productos.setText("Productos");
-        Productos.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        Productos.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fdg.png"))); // NOI18N
+        jButton1.setText("Productos");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ProductosMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        menuBar.add(Productos);
+        jToolBar1.add(jButton1);
+        jToolBar1.add(jSeparator1);
+        jToolBar1.add(jSeparator2);
+        jToolBar1.add(jSeparator3);
 
-        Proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/thefreeforty_register_icon-icons.com_66338 (1).png"))); // NOI18N
-        Proveedores.setMnemonic('e');
-        Proveedores.setText("Proveedores");
-        Proveedores.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Proveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/proveedor.png"))); // NOI18N
+        jButton2.setText("Proveedor");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ProveedoresMouseClicked(evt);
+                jButton2MouseClicked(evt);
             }
         });
-        Proveedores.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProveedoresActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        menuBar.add(Proveedores);
+        jToolBar1.add(jButton2);
+        jToolBar1.add(jSeparator6);
+        jToolBar1.add(jSeparator7);
+        jToolBar1.add(jSeparator8);
 
-        jMenu1.setText("jMenu1");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/juventud.png"))); // NOI18N
+        jButton3.setText("Clientes");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                jButton3MouseClicked(evt);
             }
         });
-        menuBar.add(jMenu1);
+        jToolBar1.add(jButton3);
+        jToolBar1.add(jSeparator9);
+        jToolBar1.add(jSeparator10);
+        jToolBar1.add(jSeparator11);
 
-        jMenu2.setText("jMenu2");
-        menuBar.add(jMenu2);
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/dgsdfg.png"))); // NOI18N
+        jButton4.setText("Empleado");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jToolBar1.add(jButton4);
+        jToolBar1.add(jSeparator12);
+        jToolBar1.add(jSeparator13);
+        jToolBar1.add(jSeparator14);
 
-        jMenu3.setText("jMenu3");
-        menuBar.add(jMenu3);
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/regreso.png"))); // NOI18N
+        jButton5.setText("Devoluciones");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jToolBar1.add(jButton5);
+        jToolBar1.add(jSeparator15);
+        jToolBar1.add(jSeparator16);
+        jToolBar1.add(jSeparator17);
 
-        setJMenuBar(menuBar);
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/opciones (1).png"))); // NOI18N
+        jButton6.setText("Categorias");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setFocusable(false);
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+        jToolBar1.add(jButton6);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(desktopPane)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProveedoresActionPerformed
-  
-    }//GEN-LAST:event_ProveedoresActionPerformed
-
-    private void ProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresMouseClicked
-        
-    }//GEN-LAST:event_ProveedoresMouseClicked
-
-    private void ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductosMouseClicked
-       producto.ObtenerDatos();
-        producto.setVisible(true);
-    }//GEN-LAST:event_ProductosMouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        producto.ObtenerDatos();
+        producto.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        proveedor.obtenerDatos();
+        proveedor.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        cliente.obtenerDatos();
+        cliente.setVisible(true);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        empleado.obtenerDatos();
+        empleado.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        devolucion.obtenerDatos();
+        devolucion.setVisible(true);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        categoria.obtenerDatos();
+        categoria.setVisible(true);
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,16 +286,29 @@ public class MenuOpciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Productos;
-    private javax.swing.JMenu Proveedores;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator10;
+    private javax.swing.JToolBar.Separator jSeparator11;
+    private javax.swing.JToolBar.Separator jSeparator12;
+    private javax.swing.JToolBar.Separator jSeparator13;
+    private javax.swing.JToolBar.Separator jSeparator14;
+    private javax.swing.JToolBar.Separator jSeparator15;
+    private javax.swing.JToolBar.Separator jSeparator16;
+    private javax.swing.JToolBar.Separator jSeparator17;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
+    private javax.swing.JToolBar.Separator jSeparator8;
+    private javax.swing.JToolBar.Separator jSeparator9;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 
 }

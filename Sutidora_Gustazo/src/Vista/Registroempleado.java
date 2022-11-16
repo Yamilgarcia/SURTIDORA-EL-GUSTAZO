@@ -24,7 +24,22 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     public Registroempleado() {
         initComponents();
         jTextIDempleado.setEnabled(false);
+        llenarcombo();
+        jTextidturno.setEnabled(false);
 
+    }
+        public void llenarcombo() {
+
+        List<Turnos> turnos = new DAOturno().ObtenerDatos();
+        for (int i = 0; i < turnos.size(); i++) {
+
+            jComboBoxturno.addItem(new Turnos (turnos.get(i).getID_turnos(),
+            turnos.get(i).getNomb(),turnos.get(i).getHrainicio(),turnos.get(i).getHrafinali()));
+        }
+
+        int id = jComboBoxturno.getItemAt(jComboBoxturno.getSelectedIndex()).getID_turnos();
+
+        jTextidturno.setText("" + id);
     }
 
     public void limpiarCampos() {
@@ -148,6 +163,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 210, 30));
 
         jTextnomb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jTextnomb1.setFocusable(false);
         jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 210, 30));
 
         jTextapell1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
@@ -213,7 +229,6 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jTextidturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 210, 30));
 
-        jComboBoxturno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxturno.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxturnoItemStateChanged(evt);
@@ -308,8 +323,9 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jComboBoxturnoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxturnoItemStateChanged
-        // TODO add your handling code here:
-        //llenarturno();
+      int id = jComboBoxturno.getItemAt(jComboBoxturno.getSelectedIndex()).getID_turnos();
+
+        jTextidturno.setText("" + id);
 
     }//GEN-LAST:event_jComboBoxturnoItemStateChanged
 
@@ -392,7 +408,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JButton jButtoneditar;
-    private javax.swing.JComboBox<String> jComboBoxturno;
+    private javax.swing.JComboBox<Turnos> jComboBoxturno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
