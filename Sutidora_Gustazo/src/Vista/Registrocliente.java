@@ -250,9 +250,9 @@ public class Registrocliente extends javax.swing.JInternalFrame {
         String  direC= jTextdirec.getText();
         String  numcelu= jTextnumcelu.getText();
 
-        if(nomb1.contentEquals("")||nomb2.contentEquals("")||
+        if(nomb1.contentEquals("")||
             direC.contentEquals("")||numcelu.contentEquals("")||
-            apell1.contentEquals("")||apell2.contentEquals("")){
+            apell1.contentEquals("")){
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
         }else{
             try{

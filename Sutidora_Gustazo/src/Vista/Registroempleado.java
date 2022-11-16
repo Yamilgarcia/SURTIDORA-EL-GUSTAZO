@@ -91,7 +91,6 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         PrimNombre = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextnomb2 = new javax.swing.JTextField();
-        jTextnomb1 = new javax.swing.JTextField();
         jTextapell1 = new javax.swing.JTextField();
         jTextnumcelu = new javax.swing.JTextField();
         jTextapell2 = new javax.swing.JTextField();
@@ -107,6 +106,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButtoneditar = new javax.swing.JButton();
+        jTextnomb1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -162,10 +162,6 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         jTextnomb2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextnomb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 180, 30));
 
-        jTextnomb1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jTextnomb1.setFocusable(false);
-        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 180, 30));
-
         jTextapell1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextapell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 180, 30));
 
@@ -219,7 +215,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1empleado);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 850, 210));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 860, 210));
 
         jTextidturno.setBackground(new java.awt.Color(204, 204, 204));
         jTextidturno.addActionListener(new java.awt.event.ActionListener() {
@@ -272,6 +268,7 @@ public class Registroempleado extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 110, 40));
+        jPanel1.add(jTextnomb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 180, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 860, 550));
@@ -300,9 +297,8 @@ public class Registroempleado extends javax.swing.JInternalFrame {
         String num = jTextnumcelu.getText();
         String id_turno = jTextidturno.getText();
 
-        if (nomb1.contentEquals("") || nomb2.contentEquals("")
-                || direc.contentEquals("") || num.contentEquals("")
-                || apell1.contentEquals("") || apell2.contentEquals("")) {
+        if (nomb1.contentEquals("") ||direc.contentEquals("") || num.contentEquals("")
+                || apell1.contentEquals("")) {
             JOptionPane.showMessageDialog(rootPane, "Todos los campos son obligatorio");
         } else {
             try {
