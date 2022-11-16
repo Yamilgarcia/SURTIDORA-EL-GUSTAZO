@@ -82,12 +82,12 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
-        setMaximizable(true);
+        setIconifiable(true);
         setResizable(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
         jLabel12.setText("ID Proveedor:");
@@ -99,38 +99,38 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
         jLabel2.setText("Registro de Proveedor");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/thefreeforty_register_icon-icons.com_66338 (1).png"))); // NOI18N
         jLabel13.setText("RUC:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/usuario (1).png"))); // NOI18N
         jLabel11.setText("Nombre:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/Phone_31105.png"))); // NOI18N
         jLabel10.setText("Telefono:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/home_home_page_house_page_home_icon_127147.png"))); // NOI18N
         jLabel8.setText("Direccion:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
 
         jTextNomb.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jPanel1.add(jTextNomb, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 180, 30));
 
         jTextnumcelu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 180, 30));
+        jPanel1.add(jTextnumcelu, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 180, 30));
 
         jTextdirec.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 180, 30));
+        jPanel1.add(jTextdirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 180, 30));
 
         jTextRuc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
         jTextRuc.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +149,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 110, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 110, 40));
 
         jTableproveedores.setBackground(new java.awt.Color(204, 204, 204));
         jTableproveedores.setModel(new javax.swing.table.DefaultTableModel(
@@ -176,7 +176,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
                 jButtoneditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 100, 40));
+        jPanel1.add(jButtoneditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 100, 40));
 
         jButtonactualizar.setBackground(new java.awt.Color(0, 153, 153));
         jButtonactualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -187,7 +187,7 @@ public class Registroproveedor extends javax.swing.JInternalFrame {
                 jButtonactualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, -1, 40));
+        jPanel1.add(jButtonactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, -1, 40));
         jPanel1.add(jTextIDprovee, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 180, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N

@@ -81,7 +81,7 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
 
         setClosable(true);
-        setMaximizable(true);
+        setIconifiable(true);
         setResizable(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,14 +91,14 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
                 jTextiddevoluActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextiddevolu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 220, 30));
+        jPanel1.add(jTextiddevolu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 180, 30));
 
         jTextidproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextidproductoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextidproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 100, 220, 30));
+        jPanel1.add(jTextidproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 180, 30));
 
         jButtonGuardar.setBackground(new java.awt.Color(0, 153, 0));
         jButtonGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -109,7 +109,7 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
                 jButtonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 120, 40));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 110, 40));
 
         jTabledevolucion.setBackground(new java.awt.Color(204, 204, 204));
         jTabledevolucion.setModel(new javax.swing.table.DefaultTableModel(
@@ -125,7 +125,7 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTabledevolucion);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 840, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 780, 150));
 
         jButtonEditar.setBackground(new java.awt.Color(0, 153, 153));
         jButtonEditar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -136,13 +136,13 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
                 jButtonEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 120, 40));
+        jPanel1.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, 110, 40));
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/business_packages_boxes_products_sellingproducts_thereport_2344.png"))); // NOI18N
         jLabel10.setText("Cantidad:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, 40));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, 40));
 
         jButtonActualizar.setBackground(new java.awt.Color(0, 153, 153));
         jButtonActualizar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -153,59 +153,61 @@ public class Registrodevoluciones extends javax.swing.JInternalFrame {
                 jButtonActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 120, 40));
+        jPanel1.add(jButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 110, 40));
 
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
         jLabel11.setText("ID_Producto:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, 40));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, -1, 40));
 
-        jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/time_date_may_19653.png"))); // NOI18N
         jLabel12.setText("Fecha:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, 40));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, 40));
 
-        jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/descripcion.png"))); // NOI18N
         jLabel13.setText("Descripcion:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/product_traceability_icon_149892.png"))); // NOI18N
         jLabel2.setText("ID:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 70, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 70, 40));
 
         jTextAreaDescripcion.setColumns(20);
         jTextAreaDescripcion.setRows(5);
-        jPanel1.add(jTextAreaDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
-        jPanel1.add(jTextfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 220, 30));
-        jPanel1.add(jTextcanti, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 220, 30));
+        jPanel1.add(jTextAreaDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 180, -1));
+        jPanel1.add(jTextfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 180, 30));
+        jPanel1.add(jTextcanti, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 180, 30));
 
-        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/3440901-box-carton-delivery-ecommerce-package-return-shipping_107530.png"))); // NOI18N
         jLabel3.setText("Devoluciones");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosss/fondos-para-páginas-web-12.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 440));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 400));
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();

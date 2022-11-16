@@ -86,7 +86,7 @@ public class MenuOpciones extends javax.swing.JFrame {
         jSeparator16 = new javax.swing.JToolBar.Separator();
         jSeparator17 = new javax.swing.JToolBar.Separator();
         jButton6 = new javax.swing.JButton();
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/Fondo.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"));
         Image image = icon.getImage();
         desktopPane = new javax.swing.JDesktopPane(){
 
@@ -109,6 +109,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
         jToolBar1.add(jButton1);
@@ -221,8 +226,8 @@ public class MenuOpciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        producto.ObtenerDatos();
-        producto.setVisible(true);
+        //producto.ObtenerDatos();
+        //producto.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -249,6 +254,11 @@ public class MenuOpciones extends javax.swing.JFrame {
         categoria.obtenerDatos();
         categoria.setVisible(true);
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        producto.ObtenerDatos();
+        producto.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
